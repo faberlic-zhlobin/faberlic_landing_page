@@ -5,5 +5,4 @@ tsconfig.json
 README.md
 package-lock.json
 *.log
-*.md
-.gitignore 
+*.md 
