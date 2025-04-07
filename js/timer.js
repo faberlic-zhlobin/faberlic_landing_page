@@ -132,7 +132,7 @@ class CountdownTimer {
                 lightBg.className = 'timer-unit-light-bg';
                 block.appendChild(lightBg);
             }
-            
+            //vghvv
             Object.assign(lightBg.style, {
                 position: 'absolute',
                 top: '0',
