@@ -1066,7 +1066,7 @@ body {
 @media (max-width: 768px) {
     :root {
         --base-font-size: 16px;
-        --ladybug-size: 30px;    /* Было 25px, увеличено в 1.2 раза */
+        --ladybug-size: 30px;
     }
     
     .container {
@@ -1090,13 +1090,15 @@ body {
     }
     
     .offer-title {
-        font-size: var(--offer-font-size-tablet);
+        font-size: 1.35rem; /* Увеличено с var(--offer-font-size-tablet) */
         max-width: 70%; /* Сужаем на планшетах */
+        font-weight: var(--font-weight-medium); /* Делаем немного жирнее */
     }
     
     .price {
-        font-size: var(--price-font-size-tablet);
+        font-size: 1.5rem; /* Увеличено */
         padding: var(--price-padding-y) var(--price-padding-x);
+        font-weight: var(--font-weight-medium); /* Делаем немного жирнее */
     }
     
     /* Уменьшаем размер ячеек для таймера */
@@ -1170,7 +1172,7 @@ body {
 
 @media (max-width: 480px) {
     :root {
-        --base-font-size: 17px; /* Ещё увеличиваем базовый шрифт */
+        --base-font-size: 17px;
     }
     
     body {
@@ -1207,12 +1209,14 @@ body {
     
     .offer-title {
         max-width: 80%;
-        font-size: calc(var(--offer-font-size-tablet) * 0.9); 
+        font-size: 1.3rem; /* Увеличено ещё больше */
+        font-weight: var(--font-weight-medium); /* Делаем немного жирнее */
     }
     
     .price {
-        font-size: calc(var(--price-font-size-tablet) * 0.95); 
-        padding: 0.15rem 0.3rem; 
+        font-size: 1.4rem; /* Увеличено ещё больше */
+        padding: 0.15rem 0.3rem;
+        font-weight: var(--font-weight-medium); /* Делаем немного жирнее */
     }
     
     /* Перемещаем счетчик ниже на мобильных устройствах */
