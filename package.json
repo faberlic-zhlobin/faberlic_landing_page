@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prebuild": "echo \"Skipping prebuild step\"",
-    "build": "echo \"Build step not needed, using precompiled files\" && exit 0",
+    "build": "npx tsc",
     "watch": "npx tsc --watch",
     "start": "npx serve"
   },
