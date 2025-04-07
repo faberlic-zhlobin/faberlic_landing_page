@@ -1,0 +1,9 @@
+node_modules
+.git
+*.ts
+*.tsx
+tsconfig.json
+README.md
+package-lock.json
+*.log
+*.md 

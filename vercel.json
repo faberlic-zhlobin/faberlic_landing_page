@@ -1,6 +1,7 @@
 {
   "version": 2,
-  "buildCommand": false,
+  "buildCommand": "echo \"Skipping build step\" && exit 0",
+  "installCommand": "echo \"Skipping install step\" && exit 0",
   "framework": null,
   "outputDirectory": ".",
   "public": true,
