@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "buildCommand": "echo \"Skipping build step\" && exit 0",
-  "installCommand": "echo \"Skipping install step\" && exit 0",
-  "framework": null,
-  "outputDirectory": ".",
-  "public": true,
-  "cleanUrls": true,
+  "builds": [
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    }
+  ],
   "routes": [
     { "handle": "filesystem" },
     { "src": "/(.*)", "dest": "/index.html" }
