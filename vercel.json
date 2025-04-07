@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "echo \"Skipping build step\"",
+  "buildCommand": false,
   "framework": null,
   "outputDirectory": ".",
   "public": true,
