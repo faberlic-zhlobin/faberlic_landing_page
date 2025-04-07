@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "buildCommand": null,
+  "buildCommand": "echo \"Skipping build step\"",
   "framework": null,
   "outputDirectory": ".",
+  "public": true,
+  "cleanUrls": true,
   "routes": [
     { "handle": "filesystem" },
     { "src": "/(.*)", "dest": "/index.html" }
