@@ -1,0 +1,2981 @@
+/* Подключение локальных шрифтов Roboto Condensed */
+@font-face {
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+    src: url('../fonts/roboto-condensed/static/RobotoCondensed-Thin.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 200;
+    font-display: swap;
+    src: url('../fonts/roboto-condensed/static/RobotoCondensed-ExtraLight.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('../fonts/roboto-condensed/static/RobotoCondensed-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/roboto-condensed/static/RobotoCondensed-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('../fonts/roboto-condensed/static/RobotoCondensed-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('../fonts/roboto-condensed/static/RobotoCondensed-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('../fonts/roboto-condensed/static/RobotoCondensed-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url('../fonts/roboto-condensed/static/RobotoCondensed-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('../fonts/roboto-condensed/static/RobotoCondensed-Black.ttf') format('truetype');
+}
+
+/* Подключение шрифта Alata */
+@font-face {
+    font-family: 'Alata';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/alata/Alata-Regular.ttf') format('truetype');
+}
+
+:root {
+    /* ======= ОСНОВНАЯ ЦВЕТОВАЯ ПАЛИТРА ======= */
+    --color-white: #ffffff;
+    --color-black: #000000;
+
+    /* ======= ЦВЕТА БЛОКА ТОВАРА ======= */
+    --product-bg-color: #b0ffbe;           /* Фон блока с описанием товара */
+    --product-image-bg-color: #FFFF05;     /* Фон блока с изображением товара (желтый) */
+    
+    /* ======= ЦВЕТА ВЕРХНЕЙ КАРТОЧКИ ======= */
+    --card-background: #90ffa0;           /* Фон основной карточки */
+    --card-border: #FF59C8;              /* Цвет рамки карточки */
+    --card-date-text: #1E2A4A;           /* Цвет текста даты "До 20 апреля" - более синеватый */
+    --card-main-text: #1E2A4A;           /* Цвет основного текста "Набор всего за" - более синеватый */
+    --card-logo-text: #FF59C8;           /* Цвет текста логотипа Faberlic */
+
+    /* ======= ЦВЕТА БЛОКА ЦЕНЫ ======= */
+    --price-gradient-start: #FF59C8;      /* Начальный цвет градиента цены */
+    --price-gradient-middle: #FF59C8;     /* Средний цвет градиента цены */
+    --price-gradient-end: #FF59C8;        /* Конечный цвет градиента цены */
+    --price-text: #ffffff;                /* Цвет текста цены */
+    --price-glow-shadow: rgba(255, 89, 200, 0.4);  /* Цвет свечения цены */
+    --price-glow-white: rgba(255, 255, 255, 0.6);   /* Цвет белого свечения */
+
+    /* ======= ЦВЕТА ПОЛОСКИ "АКЦИЯ" ======= */
+    --promo-gradient-start: #FF00C1;      /* Насыщенный розовый цвет */
+    --promo-gradient-middle1: #FF6000;    /* Яркий оранжевый цвет */
+    --promo-gradient-middle2: #0066FF;    /* Насыщенный синий цвет */
+    --promo-gradient-end: #FF00C1;        /* Насыщенный розовый цвет */
+    --promo-text: #ffffff;                /* Цвет текста "Акция" */
+
+    /* ======= ЦВЕТА ТАЙМЕРА ======= */
+    --timer-background: #90ffa0;          /* Фон блока таймера */
+    --timer-border: #FF59C8;             /* Цвет рамки таймера */
+    --timer-header-text: #1E2A4A;        /* Цвет текста заголовка таймера - более синеватый */
+    
+    /* Цвета цифр таймера */
+    --timer-digit-top-block: #a1dce6;    /* Цвет верхнего прямоугольника цифры */
+    --timer-digit-bottom-block: #597db4;  /* Цвет нижнего прямоугольника цифры */
+    --timer-digit-text: #2f5b9b;         /* Цвет текста цифр */
+    --timer-separator: #004c58;          /* Цвет разделителей (двоеточий) */
+    --timer-label-text: #1E2A4A;         /* Цвет подписей (дни, часы и т.д.) - более синеватый */
+
+    /* Обновляем все использования цветов на новые переменные */
+    --price-bg-color: linear-gradient(90deg, var(--price-gradient-start) 0%, var(--price-gradient-middle) 50%, var(--price-gradient-end) 100%);
+    --promo-bg-color: linear-gradient(90deg, var(--promo-gradient-start) 0%, var(--promo-gradient-middle1) 35%, var(--promo-gradient-middle2) 65%, var(--promo-gradient-end) 100%);
+    
+    /* Заменяем старые переменные на новые */
+    --card-bg-color: var(--card-background);
+    --card-border-color: var(--card-border);
+    --date-text-color: var(--card-date-text);
+    --offer-text-color: var(--card-main-text);
+    --logo-text-color: var(--card-logo-text);
+    --price-text-color: var(--price-text);
+    --promo-text-color: var(--promo-text);
+    --timer-bg-color: var(--timer-background);
+    --digit-bg-color: var(--timer-digit-top-block);
+    --digit-back-color: var(--timer-digit-bottom-block);
+    --digit-color: var(--timer-digit-text);
+    --separator-color: var(--timer-separator);
+    --label-color: var(--timer-label-text);
+    
+    /* ======= БАЗОВЫЕ ЦВЕТА ======= */
+    --color-dark-teal: #1E2A4A;      /* Тёмно-синий для текста - более синеватый */
+    --color-light-green: #90ffa0;    /* Яркий зеленый для фона */
+    --color-bright-green: #1B2A41;   /* Тёмно-синий для нижнего прямоугольника (более тусклый и холодный) */
+    --color-magenta: #FF59C8;        /* Фиолетовый для акцентов */
+    --color-turquoise: #90ffa0;      /* Яркий зеленый для фона таймера */
+    --color-purple: #FF59C8;         /* Фиолетовый для элементов */
+    
+    /* Дополнительные цвета для градиентов и анимаций */
+    --color-magenta-light: #FF59C8;  /* Светлый фиолетовый для градиентов */
+    --color-magenta-dark: #FF59C8;   /* Тёмный фиолетовый для градиентов */
+    
+    /* ======= НАСТРОЙКИ ШАПКИ И ОБЩИЕ ======= */
+    --body-bg-color: var(--color-white);  /* Фон страницы */
+    --body-padding-top: 2rem;             /* Отступ шапки от верха */
+    --body-padding-sides: 1.5rem;         /* Боковые отступы */
+    
+    /* ======= ШРИФТЫ ======= */
+    --base-font-size: 16px;               /* Базовый размер шрифта */
+    --font-primary: 'Roboto Condensed', sans-serif;  /* Основной шрифт */
+    --font-logo: 'Alata', sans-serif;     /* Шрифт для логотипа Faberlic */
+    
+    /* ======= ЖИРНОСТЬ ШРИФТА ======= */
+    /* Доступные значения жирности для Roboto Condensed: 
+       100 (Thin) - самый тонкий
+       200 (ExtraLight) - очень тонкий
+       300 (Light) - светлый
+       400 (Regular) - обычный (стандартный)
+       500 (Medium) - средний
+       600 (SemiBold) - полужирный
+       700 (Bold) - жирный
+       800 (ExtraBold) - очень жирный
+       900 (Black) - сверхжирный
+    */
+    --font-weight-thin: 100;              /* Самый тонкий шрифт (Thin) */
+    --font-weight-light: 300;             /* Светлый шрифт (Light) */
+    --font-weight-normal: 400;            /* Обычная жирность (Regular) */
+    --font-weight-medium: 500;            /* Средняя жирность (Medium) */
+    --font-weight-semibold: 600;          /* Полужирный шрифт (SemiBold) */
+    --font-weight-bold: 700;              /* Жирный шрифт (Bold) */
+    --font-weight-black: 900;             /* Сверхжирный шрифт (Black) */
+    
+    /* ======= КОНТЕЙНЕР ======= */
+    --container-desktop-width: 60%;       /* Ширина контейнера на десктопе */
+    --container-1200-width: 70%;          /* Ширина при 1024-1200px - было 65%, стало 70% */
+    --container-1024-width: 80%;          /* Ширина при 900-1024px - было 70%, стало 80% */
+    --container-900-width: 85%;           /* Ширина при 768-900px - было 75%, стало 85% */
+    --container-768-width: 90%;           /* Ширина при 600-768px - было 80%, стало 90% */
+    --container-600-width: 95%;           /* Ширина при 480-600px - было 90%, стало 95% */
+    --container-mobile-width: 100%;       /* Ширина на мобильных (<480px) */
+    --container-max-width: 1400px;        /* Максимальная ширина контейнера */
+    
+    /* ======= ЗЕЛЕНАЯ КАРТОЧКА ======= */
+    --card-border-width: 2px;                     /* Толщина рамки */
+    --card-border-radius: 0.5rem;                 /* Скругление углов */
+    --card-min-height: 120px;                     /* Мин. высота карточки */
+    --card-min-height-tablet: 100px;              /* Мин. высота на планшетах */
+    --card-padding: 1.5rem;                       /* Отступы внутри карточки */
+    --card-padding-top: calc(1.5rem + 2rem);      /* Верхний отступ для помещения даты и логотипа */
+    --card-padding-tablet: 1rem;                  /* Отступы на планшете */
+    --card-padding-top-tablet: calc(1rem + 2rem); /* Верхний отступ на планшете */
+    
+    /* ======= АКЦИОННАЯ ДАТА (До 20 апреля) ======= */
+    --date-font-size: 1.2rem;                     /* Размер шрифта даты */
+    --date-font-weight: var(--font-weight-normal); /* Жирность шрифта даты */
+    --date-position-top: 1rem;                    /* Отступ сверху */
+    --date-position-left: 1.5rem;                 /* Отступ слева */
+    --date-max-width: 45%;                        /* Макс. ширина текста */
+    --date-line-height: 1.2;                      /* Высота строки */
+    
+    /* ======= ЛОГОТИП FABERLIC ======= */
+    --logo-font-size: 1.5rem;                     /* Размер шрифта логотипа */
+    --logo-font-weight: normal;                   /* Жирность шрифта логотипа */
+    --logo-position-top: 0.7rem;                  /* Отступ сверху */
+    --logo-position-right: 1.5rem;                /* Отступ справа */
+    --logo-max-width: 45%;                        /* Макс. ширина */
+    --logo-line-height: 1.2;                      /* Высота строки */
+    
+    /* ======= ОСНОВНОЙ ТЕКСТ ПРЕДЛОЖЕНИЯ ======= */
+    --offer-font-size: 1.5rem;                    /* Размер шрифта */
+    --offer-font-size-tablet: 1rem;               /* Размер на планшете */
+    --offer-font-weight: var(--font-weight-normal); /* Жирность шрифта предложения */
+    --offer-max-width: 60%;                       /* Макс. ширина */
+    --offer-max-width-tablet: 55%;                /* Макс. ширина на планшете */
+    --offer-margin-right: 1rem;                   /* Отступ справа (увеличен с 0.5rem) */
+    
+    /* ======= ЦЕНА ======= */
+    --price-font-size: 1.7rem;                    /* Размер шрифта цены */
+    --price-font-size-tablet: 1.2rem;             /* Размер на планшете */
+    --price-font-weight: var(--font-weight-light); /* Жирность шрифта цены */
+    --price-padding-x: 0.3rem;                    /* Горизонтальный отступ - увеличиваем для лучшего вида */
+    --price-padding-y: 0.2rem;                    /* Вертикальный отступ - увеличиваем для лучшего вида */
+    --price-border-radius: 0.5rem;                /* Скругление углов - увеличиваем для более современного вида */
+    --price-letter-spacing: 0.5px;                /* Межбуквенный интервал */
+    
+    /* ======= ПОЛОСКА "АКЦИЯ" ======= */
+    --promo-font-size: 1.3rem;                    /* Размер шрифта */
+    --promo-font-weight: var(--font-weight-normal); /* Жирность шрифта акции */
+    --promo-padding: 0.75rem;                     /* Внутренний отступ */
+    --promo-border-radius: 0.5rem;                /* Скругление углов */
+    --promo-margin-bottom: 0.5rem;                /* Отступ снизу */
+    --promo-line-height: 1.5;                     /* Высота строки */
+    
+    /* =============================================
+       ======== НАСТРОЙКИ ТАЙМЕРА ================
+       =============================================*/
+    
+    /* ======= ТАЙМЕР: ОСНОВНОЙ КОНТЕЙНЕР ======= */
+    --timer-border-radius: 1.25rem;              /* Скругление углов таймера */
+    --timer-margin: 0 auto;                      /* Отступы для центрирования */
+    --timer-margin-top: 1rem;                    /* Верхний отступ таймера */
+    
+    /* Отступы внутри таймера */
+    --timer-padding-desktop: 1.5rem 1.5rem 2rem;   /* Отступы на десктопе */
+    --timer-padding-tablet: 1.2rem 1.2rem 1.8rem;  /* Отступы на планшете */
+    --timer-padding-small: 1rem 1rem 1.5rem;       /* Отступы на маленьких экранах */
+    --timer-padding-mobile: 0.8rem 0.8rem 1.2rem;  /* Отступы на мобильных */
+    
+    /* ======= ТАЙМЕР: ЗАГОЛОВОК ======= */
+    --timer-header-font-size: 1.5rem;             /* Размер шрифта заголовка */
+    --timer-header-font-size-tablet: calc(var(--timer-header-font-size) * 0.9);  /* Размер на планшете */
+    --timer-header-font-size-mobile: calc(var(--timer-header-font-size) * 0.85); /* Размер на мобильном */
+    --timer-header-margin-bottom: 1.25rem;        /* Отступ снизу */
+    --timer-header-margin-mobile: calc(var(--timer-header-margin-bottom) * 0.8); /* Отступ на мобильном */
+    --timer-header-font-style: italic;            /* Стиль шрифта (курсив, нормальный) */
+    --timer-header-font-weight: var(--font-weight-normal); /* Жирность */
+    
+    /* ======= ТАЙМЕР: БЛОКИ И РАСПОЛОЖЕНИЕ ======= */
+    --timer-blocks-gap: var(--timer-gap, 1rem);           /* Отступ между блоками дни/часы/минуты/секунды */
+    --timer-blocks-gap-tablet: 0.8rem;            /* Отступ на планшете */
+    --timer-blocks-gap-mobile: 0.6rem;            /* Отступ на мобильном */
+    --timer-digit-gap: 0.5rem;                    /* Отступ между цифрами внутри блока */
+    --timer-digit-gap-tablet: 0.3rem;             /* Отступ между цифрами на планшете */
+    --timer-digit-gap-mobile: 0.2rem;             /* Отступ между цифрами на мобильном */
+    --timer-digit-gap-xs: 0.15rem;                /* Отступ между цифрами на очень маленьких экранах */
+    
+    /* Сетка 2х2 для маленьких экранов */
+    --timer-grid-width: 95%;                      /* Увеличиваем с 90% до 95% */
+    --timer-grid-width-mobile: 98%;               /* Увеличиваем с 95% до 98% */
+    
+    /* Размеры цифровых блоков */
+    --digit-width: 3.5rem;                        /* Ширина блока цифры */
+    --digit-height: 4.2rem;                       /* Высота блока цифры */
+    --digit-width-tablet: 2.6rem;                 /* Ширина на планшете */
+    --digit-height-tablet: 3.4rem;                /* Высота на планшете */
+    --digit-width-small: calc(var(--digit-width-tablet) * 0.85); /* Ширина на маленьких экранах */
+    --digit-height-small: calc(var(--digit-height-tablet) * 0.85); /* Высота на маленьких экранах */
+    --digit-width-mobile: 2.2rem;                 /* Ширина на мобильном */
+    --digit-height-mobile: 2.8rem;                /* Высота на мобильном */
+    
+    /* Шрифт цифр */
+    --digit-font-size: 2.2rem;                    /* Размер шрифта цифр */
+    --digit-font-size-tablet: calc(var(--digit-font-size) * 0.85); /* Размер на планшете */
+    --digit-font-size-small: calc(var(--digit-font-size) * 0.7);   /* Размер на маленьких экранах */
+    --digit-font-size-mobile: calc(var(--digit-font-size) * 0.55); /* Размер на мобильном */
+    --digit-font-weight: var(--font-weight-bold); /* Жирность шрифта цифр */
+    
+    /* Стиль цифровых блоков */
+    --digit-border-radius: 0.7rem;                /* Скругление углов цифровых блоков */
+    --digit-offset: 0.3rem;                       /* Смещение верхнего прямоугольника от нижнего для 3D-эффекта */
+    
+    /* Размер двоеточий на разных устройствах */
+    --separator-font-size: 1.8rem;                /* Размер двоеточий на десктопе */
+    --separator-font-size-tablet: 1.6rem;         /* Размер на планшете */
+    --separator-font-size-small: 1.4rem;          /* Размер на маленьких экранах */
+    --separator-font-size-mobile: 1.2rem;         /* Размер на мобильных */
+    
+    /* Позиционирование двоеточий */
+    --separator-offset: 0.3rem;                   /* Горизонтальное смещение от края */
+    --separator-offset-tablet: 0.2rem;            /* Смещение на планшете */
+    
+    /* ======= ТАЙМЕР: ПОДПИСИ (ДНИ, ЧАСЫ и т.д.) ======= */
+    --label-font-size: 1rem;                      /* Размер шрифта подписей */
+    --label-font-size-tablet: 0.9rem;             /* Размер на планшете */
+    --label-font-size-mobile: 0.75rem;            /* Размер на мобильных */
+    --label-margin-top: 0.5rem;                   /* Отступ сверху */
+    --label-font-weight: var(--font-weight-normal); /* Жирность подписей */
+
+    /* ======= СЕТКА ТЕТРАДИ ======= */
+    --grid-color: rgba(89, 77, 196, 0.7);    /* Цвет линий сетки #594DC4 с прозрачностью 70% */
+    --grid-size: 20px;                      /* Размер ячейки сетки */
+
+    /* Настройки божьих коровок */
+    --ladybug-size: 36px;                   /* Было 30px, увеличено в 1.2 раза */
+    --ladybug-color: #e81e62;
+    --ladybug-spots: #210f4b;
+    --ladybug-count: 2;
+    --ladybug-eye-color: #FFFFFF;
+    --ladybug-eye-pupil: #210f4b;
+    --ladybug-smile-color: #210f4b;
+    
+    /* Дополнительные размеры для плавного уменьшения */
+    --digit-width-900: 3.2rem;                    /* Ширина для экранов до 900px */
+    --digit-height-900: 3.8rem;                   /* Высота для экранов до 900px */
+    --digit-font-size-900: 2rem;                  /* Размер шрифта для экранов до 900px */
+    
+    --digit-width-800: 3rem;                      /* Ширина для экранов до 800px */
+    --digit-height-800: 3.6rem;                   /* Высота для экранов до 800px */
+    --digit-font-size-800: 1.9rem;                /* Размер шрифта для экранов до 800px */
+    
+    /* Дополнительные размеры для плавного уменьшения */
+    --digit-width-1100: 3.4rem;                   /* Ширина для экранов до 1100px */
+    --digit-height-1100: 4rem;                    /* Высота для экранов до 1100px */
+    --digit-font-size-1100: 2.1rem;               /* Размер шрифта для экранов до 1100px */
+    
+    --digit-width-900: 3rem;                      /* Было 3.2rem - уменьшаем быстрее */
+    --digit-height-900: 3.6rem;                   /* Было 3.8rem - уменьшаем быстрее */
+    --digit-font-size-900: 1.9rem;                /* Было 2rem - уменьшаем быстрее */
+    
+    --digit-width-800: 2.8rem;                    /* Было 3rem - уменьшаем быстрее */
+    --digit-height-800: 3.4rem;                   /* Было 3.6rem - уменьшаем быстрее */
+    --digit-font-size-800: 1.8rem;                /* Было 1.9rem - уменьшаем быстрее */
+    
+    /* ======= ЦВЕТА КНОПКИ WHATSAPP ======= */
+    --whatsapp-top-color-1: #11a757; /* Начальный цвет градиента верхнего прямоугольника */
+    --whatsapp-top-color-2: #179e88; /* Средний цвет градиента верхнего прямоугольника */
+    --whatsapp-top-color-3: #0d8075; /* Конечный цвет градиента верхнего прямоугольника */
+    --whatsapp-bottom-color: #08544e; /* Цвет нижнего прямоугольника */
+    --whatsapp-text-color: #ffffff; /* Цвет текста кнопки */
+    --whatsapp-shadow-color: rgba(9, 76, 46, 0.6); /* Цвет тени */
+    --whatsapp-grain-opacity: 0.05; /* Интенсивность эффекта зернистости */
+
+    /* ======= ЦВЕТА КНОПКИ ПОДАРКА (СИНИЕ) ======= */
+    --gift-button-top-color-1: #007bff; /* Ярко-синий */
+    --gift-button-top-color-2: #0056b3; /* Средне-синий */
+    --gift-button-top-color-3: #004085; /* Темно-синий */
+    --gift-button-bottom-color: #00274f; /* Очень темно-синий */
+}
+
+/* Генератор шума для эффекта зернистости */
+@keyframes noiseAnimation {
+    0% { background-position: 0% 0%; }
+    25% { background-position: 25% 25%; }
+    50% { background-position: 50% 50%; }
+    75% { background-position: 75% 75%; }
+    100% { background-position: 0% 0%; }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: var(--base-font-size);
+    font-family: var(--font-primary);
+}
+
+body {
+    background-color: var(--body-bg-color);
+    background-image: 
+        /* Вертикальные линии */
+        linear-gradient(90deg, 
+            transparent calc(var(--grid-size) - 1px),
+            var(--grid-color) calc(var(--grid-size) - 1px),
+            var(--grid-color) var(--grid-size),
+            transparent var(--grid-size)
+        ),
+        /* Горизонтальные линии */
+        linear-gradient(0deg, 
+            transparent calc(var(--grid-size) - 1px),
+            var(--grid-color) calc(var(--grid-size) - 1px),
+            var(--grid-color) var(--grid-size),
+            transparent var(--grid-size)
+        );
+    background-size: var(--grid-size) var(--grid-size);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: var(--body-padding-sides);
+    padding-top: var(--body-padding-top);
+}
+
+.container {
+    width: var(--container-desktop-width);
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    background-color: transparent;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+
+.offer-card {
+    background-color: var(--card-bg-color);
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: var(--card-border-width) solid var(--card-border-color);
+    margin-bottom: 0.5rem; /* Вдвое уменьшенный отступ между блоками */
+    width: 100%;
+    min-height: var(--card-min-height);
+    height: auto;
+    justify-content: space-between;
+    overflow: hidden;
+    padding-top: calc(var(--card-padding-top) + 1rem); /* Увеличиваем верхний отступ для пространства между надписями */
+    padding-bottom: calc(var(--card-padding) + 1rem); /* Увеличиваем нижний отступ для счетчика */
+}
+
+/* ТЕКСТ: "До 20 апреля!" - верхний левый текст в карточке */
+.offer-text {
+    color: var(--date-text-color);
+    font-size: var(--date-font-size);
+    font-weight: var(--date-font-weight);
+    font-family: var(--font-primary);
+    position: absolute;
+    top: var(--date-position-top);
+    left: var(--card-padding); /* Выравниваем по левому краю контента */
+    max-width: var(--date-max-width);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: var(--date-line-height);
+    margin-bottom: 0.5rem; /* Добавляем отступ снизу */
+}
+
+.offer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* Выравнивание по нижнему краю */
+    margin-top: auto;
+    width: 100%;
+    flex-wrap: wrap; /* Разрешаем перенос блоков */
+    gap: 0.5rem; /* Добавляем отступ между элементами */
+}
+
+/* ТЕКСТ: "Набор всего за" - часть с основным текстом предложения */
+.offer-title {
+    color: var(--offer-text-color);
+    font-size: var(--offer-font-size);
+    font-weight: var(--offer-font-weight);
+    font-family: var(--font-primary);
+    max-width: 90%; /* Увеличиваем ширину для размещения текста и цены */
+    overflow: visible; /* Меняем на visible, чтобы цена не обрезалась */
+    display: inline-flex;
+    align-items: center; /* Выравнивание по центру */
+    flex-wrap: wrap; /* Разрешаем перенос при необходимости */
+    margin-bottom: 0.5rem; /* Отступ снизу */
+    margin-right: 0.5rem; /* Отступ справа */
+    line-height: 1.3; /* Увеличиваем высоту строки для лучшего выравнивания */
+}
+
+/* Удаляем старые анимации взрыва */
+@keyframes priceGlow {
+    /* Пустая анимация, не будет использоваться */
+}
+
+/* ТЕКСТ: "31.08 BYN" - цена в цветном блоке без эффектов */
+.price {
+    background-color: #FF59C8;
+    color: var(--price-text-color);
+    padding: var(--price-padding-y) var(--price-padding-x);
+    border-radius: var(--price-border-radius);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--price-font-size);
+    font-weight: var(--price-font-weight);
+    font-family: var(--font-primary);
+    white-space: nowrap;
+    letter-spacing: var(--price-letter-spacing);
+    flex-shrink: 0;
+    min-width: min-content;
+    line-height: 1;
+    margin-left: 0.5rem; /* Добавляем отступ слева для пробела между текстом и ценой */
+}
+
+/* Удаляем эффект при наведении */
+.price:hover {
+    transform: none;
+}
+
+/* ТЕКСТ: "Faberlic" - логотип/бренд в правом верхнем углу */
+.brand {
+    color: var(--logo-text-color);
+    font-size: var(--logo-font-size);
+    font-weight: var(--logo-font-weight);
+    font-family: var(--font-logo);
+    position: absolute;
+    top: var(--logo-position-top);
+    right: var(--logo-position-right);
+    max-width: var(--logo-max-width);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: right;
+    line-height: var(--logo-line-height);
+}
+
+/* Добавляем анимацию градиента для полоски "Акция" с очень плавными переходами цветов */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Полоска с "Акция" */
+.promo-bar {
+    background: linear-gradient(90deg, 
+        var(--promo-gradient-start) 0%, 
+        color-mix(in srgb, var(--promo-gradient-start) 80%, var(--promo-gradient-middle1) 20%) 10%,
+        color-mix(in srgb, var(--promo-gradient-start) 50%, var(--promo-gradient-middle1) 50%) 20%,
+        color-mix(in srgb, var(--promo-gradient-start) 20%, var(--promo-gradient-middle1) 80%) 30%,
+        var(--promo-gradient-middle1) 40%,
+        color-mix(in srgb, var(--promo-gradient-middle1) 70%, var(--promo-gradient-middle2) 30%) 50%,
+        color-mix(in srgb, var(--promo-gradient-middle1) 30%, var(--promo-gradient-middle2) 70%) 60%,
+        var(--promo-gradient-middle2) 70%,
+        color-mix(in srgb, var(--promo-gradient-middle2) 70%, var(--promo-gradient-end) 30%) 80%,
+        color-mix(in srgb, var(--promo-gradient-middle2) 30%, var(--promo-gradient-end) 70%) 90%,
+        var(--promo-gradient-end) 100%
+    );
+    background-size: 300% 100%;
+    animation: gradientMove 20s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+    padding: var(--promo-padding);
+    margin-bottom: 0.5rem; /* Вдвое уменьшенный отступ между блоками */
+    border-radius: var(--promo-border-radius);
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* ТЕКСТ: "Акция" - бегущая строка */
+.promo-text {
+    color: var(--promo-text-color);
+    font-size: var(--promo-font-size);
+    font-weight: var(--promo-font-weight);
+    font-family: var(--font-primary);
+    font-style: italic;
+    line-height: var(--promo-line-height);
+    display: block;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* Контейнер таймера */
+.countdown-timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background-color: var(--timer-bg-color);
+    border-radius: var(--card-border-radius);
+    border: var(--card-border-width) solid var(--card-border-color);
+    padding: var(--timer-padding-desktop);
+    text-align: center;
+    margin: 0 auto; /* Центрирование по горизонтали */
+    margin-bottom: 0.5rem; /* Вдвое уменьшенный отступ между блоками */
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.timer-header {
+    font-size: var(--timer-header-font-size);
+    color: var(--timer-header-text);
+    font-weight: var(--timer-header-font-weight);
+    margin-bottom: var(--timer-header-margin-bottom);
+    text-align: center;
+}
+
+.timer-blocks {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem; /* Увеличиваем отступ между блоками (было var(--timer-blocks-gap)) */
+    margin: 0;
+    padding: 0;
+    flex-wrap: nowrap; /* Гарантируем отсутствие переноса */
+    width: 100%;
+    position: relative; /* Для позиционирования разделителей */
+}
+
+/* Добавляем разделители между блоками времени */
+.timer-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    position: relative; /* Для добавления разделителей */
+    background-color: transparent;
+}
+
+/* Добавляем разделительные двоеточия между блоками */
+.timer-block:not(:last-child)::after {
+    content: ":";
+    position: absolute;
+    right: calc(-1 * 1.5rem / 2 - var(--separator-offset)); /* Обновляем позицию с учетом нового отступа */
+    top: calc(var(--digit-height) / 2 - 0.8rem);
+    font-size: var(--separator-font-size);
+    font-weight: var(--separator-font-weight);
+    color: var(--separator-color);
+}
+
+.timer-unit {
+    display: flex;
+    gap: 0; /* Убираем отступ между цифрами в одной группе */
+    background-color: transparent;
+    padding: 0.2rem;
+    border-radius: var(--digit-border-radius);
+    position: relative;
+    box-shadow: none; /* Убираем тень */
+}
+
+/* Оболочка для групп цифр - нижний (темный) прямоугольник */
+.timer-unit::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--digit-back-color); /* Цвет нижнего блока */
+    border-radius: var(--digit-border-radius);
+    z-index: 0;
+    border: none;
+}
+
+/* Верхний (светлый) прямоугольник со смещением для 3D-эффекта */
+.timer-unit::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--digit-bg-color); /* Цвет верхнего блока */
+    border-radius: var(--digit-border-radius);
+    z-index: 1;
+    transform: translate(calc(-1 * var(--digit-offset)), calc(-1 * var(--digit-offset))); /* Смещаем верхний блок влево и вверх */
+}
+
+.timer-label {
+    font-size: var(--label-font-size);
+    color: var(--label-color);
+    font-weight: var(--label-font-weight);
+    margin-top: var(--label-margin-top);
+    text-align: center;
+}
+
+.timer-digit {
+    position: relative;
+    width: var(--digit-width);
+    height: var(--digit-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2; /* Увеличиваем z-index, чтобы цифры были видны поверх фона */
+    transform: translate(calc(-1 * var(--digit-offset)), calc(-1 * var(--digit-offset))); /* Смещаем цифры вместе с верхним блоком */
+}
+
+/* Добавляем пунктирную линию между цифрами */
+.timer-digit:first-child {
+    position: relative;
+}
+
+/* Удаляем все стили для пунктирной линии, так как они теперь в JavaScript */
+.timer-digit:first-child::after {
+    display: none !important;
+    content: none !important;
+    border: none !important;
+}
+
+/* Удаляем все медиа-запросы с настройками пунктирной линии */
+/* Добавляем единый стиль для всех разрешений */
+@media screen {
+    .timer-unit {
+        position: relative; /* Сохраняем для правильного позиционирования */
+    }
+    
+    /* Удаляем альтернативный подход */
+    .timer-unit::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--digit-back-color);
+        border-radius: var(--digit-border-radius);
+        z-index: 0;
+        border: none;
+    }
+}
+
+/* Удаляем специальные правила для удаления лишних разделителей */
+.timer-block:last-child .timer-unit::before,
+.timer-block .timer-digit:last-child::after {
+    display: none;
+}
+
+/* Удаляем все старые медиа-запросы для линии */
+@media screen {
+    .timer-digit:first-child::after {
+        display: none !important;
+        content: none !important;
+        border: none !important;
+    }
+}
+
+/* Удаляем применяемый стиль для линии на всех разрешениях */
+@media (max-width: 768px), 
+       (max-width: 700px), 
+       (max-width: 650px), 
+       (max-width: 600px), 
+       (max-width: 480px), 
+       (max-width: 400px) {
+    .timer-digit:first-child::after {
+        display: none !important;
+        content: none !important;
+        border: none !important;
+    }
+    
+    /* Сохраняем важные стили для темных прямоугольников и при адаптации */
+    .timer-unit::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--digit-back-color);
+        border-radius: var(--digit-border-radius);
+        z-index: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .timer-blocks {
+        gap: 1.2rem; /* Увеличенный отступ для планшетов */
+    }
+    
+    .timer-block:not(:last-child)::after {
+        right: calc(-1 * 1.2rem / 2 - 0.2rem);
+        top: calc(var(--digit-height-tablet) / 2 - 0.7rem);
+        font-size: var(--separator-font-size-tablet);
+    }
+    
+    /* Здесь были удалены старые стили */
+}
+
+@media (max-width: 600px) {
+    .timer-blocks {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+        gap: 0.7rem; /* Уменьшаем горизонтальный отступ с 1rem */
+        grid-row-gap: 2.75rem;
+        justify-items: center;
+        width: var(--timer-grid-width-mobile);
+        margin: 0 auto;
+        padding: 0; /* Убираем внутренние отступы */
+    }
+    
+    /* Также уменьшаем отступ у заголовка таймера */
+    .timer-header {
+        margin-bottom: 1.5rem; /* Уменьшаем с 2.5rem */
+    }
+    
+    /* Здесь были удалены старые стили */
+    
+    /* Скрываем стандартные разделители при перегруппировке в сетку 2×2 */
+    .timer-block:not(:last-child)::after {
+        content: "";
+        display: none;
+    }
+
+    /* Улучшаем отображение подписей, чтобы они не перекрывались */
+    .timer-label {
+        font-size: 0.75rem;
+        margin-top: 0.3rem;
+        position: relative;
+        z-index: 5; /* Повышаем z-index для надписей */
+    }
+    
+    /* Добавляем фон для подписей, чтобы они не перекрывались с цифрами */
+    .timer-label::before {
+        content: "";
+        position: absolute;
+        top: -0.15rem;
+        left: -0.5rem;
+        right: -0.5rem;
+        bottom: -0.15rem;
+        background-color: var(--timer-bg-color);
+        z-index: -1;
+        border-radius: 0.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Здесь были удалены старые стили */
+    
+    /* Остальные стили не меняем */
+}
+
+/* Медиа-запрос для 700px */
+@media (max-width: 700px) {
+    .timer-digit {
+        width: calc(var(--digit-width-tablet) + 0.2rem);
+        height: calc(var(--digit-height-tablet) + 0.2rem);
+    }
+    
+    .timer-digit span {
+        font-size: calc(var(--digit-font-size-tablet) + 0.1rem);
+    }
+    
+    /* Здесь были удалены старые стили */
+}
+
+/* Убираем фоны для отдельных цифр, так как теперь фон общий */
+.timer-digit-front, .timer-digit-back {
+    display: none;
+}
+
+.timer-digit span {
+    font-size: var(--digit-font-size);
+    color: var(--digit-color);
+    font-weight: var(--digit-font-weight);
+    position: relative;
+    z-index: 3;
+    width: 1em; /* Фиксированная ширина для каждой цифры */
+    text-align: center;
+    line-height: 1; /* Предотвращает дергание по вертикали */
+}
+
+/* Медиа-запросы для адаптации разделителей на разных устройствах */
+@media (max-width: 768px) {
+    .timer-blocks {
+        gap: 1.2rem; /* Увеличенный отступ для планшетов (было var(--timer-blocks-gap-tablet)) */
+    }
+    
+    .timer-block:not(:last-child)::after {
+        right: calc(-1 * 1.2rem / 2 - 0.2rem); /* Обновляем позицию с учетом нового отступа */
+        top: calc(var(--digit-height-tablet) / 2 - 0.7rem);
+        font-size: var(--separator-font-size-tablet);
+    }
+    
+    .timer-unit {
+        padding: 0.15rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .timer-blocks {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+        gap: 1rem; /* Увеличенный отступ для мобильных (было var(--timer-blocks-gap-mobile)) */
+        justify-items: center;
+        width: var(--timer-grid-width-mobile);
+        margin: 0 auto;
+    }
+    
+    .countdown-timer {
+        padding: var(--timer-padding-small);
+    }
+    
+    /* Добавляем разделитель между днями и часами (первый и второй блоки) */
+    .timer-block:first-child::after {
+        content: ":";
+        display: block;
+        position: absolute;
+        right: -50%; /* Смещаем на половину расстояния между ячейками */
+        top: 50%; /* Размещаем по вертикальному центру */
+        transform: translate(50%, -50%); /* Центрируем по обеим осям */
+        font-size: var(--separator-font-size-mobile);
+        font-weight: var(--separator-font-weight);
+        color: var(--separator-color);
+    }
+    
+    /* Добавляем разделитель между минутами и секундами (третий и четвертый блоки) */
+    .timer-block:nth-child(3)::after {
+        content: ":";
+        display: block;
+        position: absolute;
+        right: -50%; /* Смещаем на половину расстояния между ячейками */
+        top: 50%; /* Размещаем по вертикальному центру */
+        transform: translate(50%, -50%); /* Центрируем по обеим осям */
+        font-size: var(--separator-font-size-mobile);
+        font-weight: var(--separator-font-weight);
+        color: var(--separator-color);
+    }
+    
+    /* Настройки для мобильного размера ячеек */
+    .timer-digit {
+        width: var(--digit-width-small);
+        height: var(--digit-height-small);
+    }
+    
+    .timer-digit span {
+        font-size: var(--digit-font-size-mobile);
+    }
+    
+    /* Скрываем стандартные разделители при перегруппировке в сетку 2×2 */
+    .timer-block:not(:last-child)::after {
+        content: "";
+        display: none;
+    }
+    
+    .timer-unit {
+        padding: 0.12rem;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --base-font-size: 15px;
+    }
+    
+    body {
+        padding: var(--card-padding-tablet);
+    }
+    
+    .container {
+        width: var(--container-mobile-width);
+    }
+    
+    .offer-card {
+        padding: var(--card-padding-tablet);
+        padding-top: calc(var(--card-padding-top-tablet) + 0.5rem); /* Меньший отступ на очень маленьких экранах */
+        padding-bottom: calc(var(--card-padding-tablet) + 1.8rem); /* Увеличенный нижний отступ для счетчика */
+    }
+    
+    .offer-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+        margin-bottom: var(--promo-margin-bottom);
+    }
+    
+    .offer-title {
+        max-width: 80%;
+        font-size: calc(var(--offer-font-size-tablet) * 0.9); /* Немного уменьшаем шрифт */
+    }
+    
+    .price {
+        font-size: calc(var(--price-font-size-tablet) * 0.95); /* Немного уменьшаем шрифт цены */
+        padding: 0.15rem 0.3rem; /* Уменьшаем внутренние отступы блока цены */
+    }
+    
+    /* Перемещаем счетчик ниже на мобильных устройствах */
+    .views-counter {
+        bottom: 0.3rem;
+        right: var(--logo-position-right);
+        padding: 0.15rem 0.3rem;
+    }
+    
+    /* Адаптация сетки 2×2 для маленьких экранов */
+    .timer-blocks {
+        gap: var(--timer-digit-gap-xs);
+        width: var(--timer-grid-width-mobile);
+    }
+    
+    .countdown-timer {
+        padding: var(--timer-padding-mobile);
+    }
+    
+    /* Подправляем разделители для маленьких экранов */
+    .timer-block:first-child::after,
+    .timer-block:nth-child(3)::after {
+        font-size: var(--separator-font-size-mobile);
+        /* Сохраняем центрирование, меняя только размер шрифта */
+    }
+    
+    /* Максимально уменьшаем размер ячеек */
+    .timer-digit {
+        width: var(--digit-width-mobile);
+        height: var(--digit-height-mobile);
+    }
+    
+    .timer-digit span {
+        font-size: var(--digit-font-size-mobile);
+    }
+    
+    .timer-header {
+        font-size: var(--timer-header-font-size-mobile);
+        margin-bottom: var(--timer-header-margin-mobile);
+    }
+    
+    .timer-label {
+        font-size: var(--label-font-size-mobile);
+    }
+    
+    .timer-unit {
+        gap: var(--timer-digit-gap-mobile);
+    }
+}
+
+/* Основные медиа-запросы с постепенным увеличением ширины контейнера */
+@media (max-width: 1200px) {
+    .container {
+        width: var(--container-1200-width);
+    }
+}
+
+@media (max-width: 1024px) {
+    .container {
+        width: var(--container-1024-width);
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        width: var(--container-900-width);
+    }
+    
+    :root {
+        --base-font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --base-font-size: 16px;
+        --ladybug-size: 30px;    /* Было 25px, увеличено в 1.2 раза */
+    }
+    
+    .container {
+        width: var(--container-768-width);
+    }
+    
+    .offer-card {
+        min-height: var(--card-min-height-tablet);
+        height: auto;
+        padding: var(--card-padding-tablet);
+        padding-top: calc(var(--card-padding-top-tablet) + 0.8rem); /* Адаптивный верхний отступ */
+        padding-bottom: calc(var(--card-padding-tablet) + 1rem); /* Адаптивный нижний отступ */
+    }
+    
+    .offer-text {
+        left: var(--card-padding-tablet); /* Выравниваем на мобильных устройствах */
+    }
+    
+    .offer-content {
+        gap: 0.4rem; /* Уменьшаем отступ между элементами */
+    }
+    
+    .offer-title {
+        font-size: var(--offer-font-size-tablet);
+        max-width: 70%; /* Сужаем на планшетах */
+    }
+    
+    .price {
+        font-size: var(--price-font-size-tablet);
+        padding: var(--price-padding-y) var(--price-padding-x);
+    }
+    
+    /* Уменьшаем размер ячеек для таймера */
+    .timer-digit {
+        width: var(--digit-width-tablet);
+        height: var(--digit-height-tablet);
+    }
+    
+    .timer-digit span {
+        font-size: var(--digit-font-size-tablet);
+    }
+    
+    /* Уменьшаем отступы для блоков таймера */
+    .timer-unit {
+        gap: var(--timer-blocks-gap-tablet);
+    }
+    
+    .ladybug:active {
+        transform: translate(30px, -30px) scale(0.8);
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: var(--container-600-width);
+    }
+    
+    :root {
+        --base-font-size: 18px; /* Возвращаем адекватный размер шрифта */
+    }
+    
+    .product-content {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+    
+    .product-image {
+        width: calc(100% + 4px); /* Компенсируем границу 2px с каждой стороны */
+        max-width: none;
+        margin: 0 -2px; /* Отрицательные отступы для компенсации границы */
+        padding: 0;
+        border-radius: var(--card-border-radius) var(--card-border-radius) 0 0;
+        position: relative;
+        left: 0;
+        right: 0;
+    }
+    
+    .product-photo {
+        min-height: auto;
+        height: auto;
+        width: 100%;
+        border-radius: calc(var(--card-border-radius) - 2px) calc(var(--card-border-radius) - 2px) 0 0;
+    }
+    
+    .product-description {
+        padding: 1rem;
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .product-list {
+        margin-bottom: 0;
+    }
+    
+    .product-info {
+        padding: 0;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --base-font-size: 17px; /* Ещё увеличиваем базовый шрифт */
+    }
+    
+    body {
+        padding: var(--card-padding-tablet);
+    }
+    
+    .container {
+        width: var(--container-mobile-width);
+    }
+    
+    .offer-card {
+        padding: var(--card-padding-tablet);
+        padding-top: calc(var(--card-padding-top-tablet) + 0.5rem); /* Меньший отступ на очень маленьких экранах */
+        padding-bottom: calc(var(--card-padding-tablet) + 1.8rem); /* Увеличенный нижний отступ для счетчика */
+    }
+    
+    /* Предотвращаем перекрытие текста в шапке */
+    .offer-text {
+        max-width: 40%; /* Уменьшаем максимальную ширину */
+        font-size: calc(var(--date-font-size) * 0.85); /* Уменьшаем шрифт */
+    }
+    
+    .brand {
+        max-width: 40%; /* Уменьшаем максимальную ширину */
+        font-size: calc(var(--logo-font-size) * 0.85); /* Уменьшаем шрифт */
+    }
+    
+    .offer-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+        margin-bottom: var(--promo-margin-bottom);
+    }
+    
+    .offer-title {
+        max-width: 80%;
+        font-size: calc(var(--offer-font-size-tablet) * 0.9); 
+    }
+    
+    .price {
+        font-size: calc(var(--price-font-size-tablet) * 0.95); 
+        padding: 0.15rem 0.3rem; 
+    }
+    
+    /* Перемещаем счетчик ниже на мобильных устройствах */
+    .views-counter {
+        bottom: 0.3rem;
+        right: var(--logo-position-right);
+        padding: 0.15rem 0.3rem;
+    }
+    
+    /* Адаптация сетки 2×2 для маленьких экранов */
+    .timer-blocks {
+        gap: var(--timer-digit-gap-xs);
+        width: var(--timer-grid-width-mobile);
+    }
+    
+    .countdown-timer {
+        padding: var(--timer-padding-mobile);
+    }
+    
+    /* Подправляем разделители для маленьких экранов */
+    .timer-block:first-child::after,
+    .timer-block:nth-child(3)::after {
+        font-size: var(--separator-font-size-mobile);
+        /* Сохраняем центрирование, меняя только размер шрифта */
+    }
+    
+    /* Максимально уменьшаем размер ячеек */
+    .timer-digit {
+        width: var(--digit-width-mobile);
+        height: var(--digit-height-mobile);
+    }
+    
+    .timer-digit span {
+        font-size: var(--digit-font-size-mobile);
+    }
+    
+    .timer-header {
+        font-size: var(--timer-header-font-size-mobile);
+        margin-bottom: var(--timer-header-margin-mobile);
+    }
+    
+    .timer-label {
+        font-size: var(--label-font-size-mobile);
+    }
+    
+    .timer-unit {
+        gap: var(--timer-digit-gap-mobile);
+    }
+}
+
+@media (max-width: 480px) {
+    /* --- Адаптация Доп. Инфо --- */
+    .more-info-section {
+        gap: 0.5rem; /* Стандартный отступ */
+        margin-top: 1rem;
+    }
+    .section-title {
+        font-size: 1.2rem;
+    }
+    .app-download-block, .benefits-block, .social-share-block {
+        padding: 1rem;
+    }
+    .qr-codes-container {
+        justify-content: center; /* Центрируем QR-коды */
+        gap: 1rem;
+    }
+    .qr-code-img {
+        width: 90px;
+        height: 90px;
+        /* Розовая рамка наследуется */
+    }
+    .benefit-text {
+        font-size: 0.95rem; /* Немного увеличиваем шрифт */
+    }
+    /* Увеличиваем кнопки соцсетей */
+    .social-button {
+        width: 44px; /* Было 40px */
+        height: 44px; /* Было 40px */
+        /* Розовая рамка наследуется */
+    }
+    .social-icon {
+        width: 22px; /* Было 20px */
+        height: 22px; /* Было 20px */
+    }
+}
+
+/* Новый медиа-запрос для очень узких экранов */
+@media (max-width: 325px) {
+    .offer-text {
+        max-width: 35%; /* Еще уменьшаем ширину */
+        font-size: calc(var(--date-font-size) * 0.8); /* Еще уменьшаем шрифт */
+    }
+    
+    .brand {
+        max-width: 35%; /* Еще уменьшаем ширину */
+        font-size: calc(var(--logo-font-size) * 0.8); /* Еще уменьшаем шрифт */
+    }
+}
+
+/* --- Конец стилей для ДОП. ИНФО --- */
+
+/* Добавим стили для широких экранов */
+@media (min-width: 1200px) {
+    .product-content {
+        gap: 0;
+        min-height: 450px;
+    }
+    
+    .product-image {
+        min-width: 420px;
+        max-width: 55%;
+        display: flex;
+        align-items: center;
+    }
+    
+    .product-photo {
+        max-height: 100%;
+    }
+    
+    .description-title {
+        font-size: 1.3rem;
+    }
+    
+    .product-item {
+        font-size: 1.05rem;
+        line-height: 1.5;
+        margin-bottom: 0.9rem;
+    }
+}
+
+/* Медиа-запросы для плавного уменьшения размеров ячеек */
+@media (max-width: 900px) {
+    .timer-digit {
+        width: var(--digit-width-900);
+        height: var(--digit-height-900);
+    }
+    
+    .timer-digit span {
+        font-size: var(--digit-font-size-900);
+    }
+}
+
+@media (max-width: 800px) {
+    .timer-digit {
+        width: var(--digit-width-800);
+        height: var(--digit-height-800);
+    }
+    
+    .timer-digit span {
+        font-size: var(--digit-font-size-800);
+    }
+}
+
+/* Увеличиваем расстояние между рядами в сетке 2x2 */
+@media (max-width: 600px) {
+    .timer-blocks {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+        gap: 1rem; /* Горизонтальный отступ */
+        grid-row-gap: 2.75rem; /* Уменьшаем вдвое вертикальный отступ (было 5.5rem) */
+        justify-items: center;
+        width: var(--timer-grid-width-mobile);
+        margin: 0 auto;
+    }
+    
+    /* Также уменьшаем отступ у заголовка таймера */
+    .timer-header {
+        margin-bottom: 1.5rem; /* Уменьшаем с 2.5rem */
+    }
+    
+    /* Улучшаем отображение подписей, чтобы они не перекрывались */
+    .timer-label {
+        font-size: 0.75rem;
+        margin-top: 0.4rem;
+        position: relative;
+        z-index: 5;
+        font-weight: var(--font-weight-semibold); /* Делаем подписи чуть жирнее */
+    }
+    
+    /* Усиливаем фон для подписей */
+    .timer-label::before {
+        content: "";
+        position: absolute;
+        top: -0.2rem;
+        left: -0.6rem;
+        right: -0.6rem;
+        bottom: -0.2rem;
+        background-color: var(--timer-bg-color);
+        z-index: -1;
+        border-radius: 0.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Увеличиваем вертикальный отступ в сетке на очень маленьких экранах */
+    .timer-blocks {
+        grid-row-gap: 2.75rem; /* Уменьшаем вдвое (было 5.5rem) */
+    }
+    
+    /* Уменьшаем размер ячеек на маленьких экранах */
+    .timer-digit {
+        width: var(--digit-width-mobile);
+        height: var(--digit-height-mobile);
+    }
+    
+    .timer-digit span {
+        font-size: var(--digit-font-size-mobile);
+    }
+}
+
+/* Добавляем промежуточную точку для более быстрого уменьшения */
+@media (max-width: 1100px) {
+    .timer-digit {
+        width: var(--digit-width-1100);
+        height: var(--digit-height-1100);
+    }
+    
+    .timer-digit span {
+        font-size: var(--digit-font-size-1100);
+    }
+}
+
+/* Улучшаем медиа-запросы для плавного уменьшения размеров ячеек */
+@media (max-width: 900px) {
+    .timer-digit {
+        width: var(--digit-width-900);
+        height: var(--digit-height-900);
+    }
+    
+    .timer-digit span {
+        font-size: var(--digit-font-size-900);
+    }
+}
+
+@media (max-width: 800px) {
+    .timer-digit {
+        width: var(--digit-width-800);
+        height: var(--digit-height-800);
+    }
+    
+    .timer-digit span {
+        font-size: var(--digit-font-size-800);
+    }
+}
+
+/* Добавляем ещё одну промежуточную точку для более быстрого уменьшения */
+@media (max-width: 700px) {
+    .timer-digit {
+        width: calc(var(--digit-width-tablet) + 0.2rem);
+        height: calc(var(--digit-height-tablet) + 0.2rem);
+    }
+    
+    .timer-digit span {
+        font-size: calc(var(--digit-font-size-tablet) + 0.1rem);
+    }
+    
+    /* Фиксируем позицию пунктирной линии для ширины 700px */
+    .timer-digit:first-child::after {
+        right: -1px;
+        height: 60%;
+        top: 20%;
+        transform: translateX(50%); /* Центрируем линию */
+        border-right-width: 1px;
+    }
+}
+
+/* Увеличиваем расстояние между рядами в сетке 2x2 */
+@media (max-width: 600px) {
+    .timer-blocks {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+        gap: 1rem; /* Горизонтальный отступ */
+        grid-row-gap: 2.75rem;
+        justify-items: center;
+        width: var(--timer-grid-width-mobile);
+        margin: 0 auto;
+    }
+    
+    /* Также уменьшаем отступ у заголовка таймера */
+    .timer-header {
+        margin-bottom: 1.5rem; /* Уменьшаем с 2.5rem */
+    }
+    
+    /* Улучшаем отображение подписей, чтобы они не перекрывались */
+    .timer-label {
+        font-size: 0.75rem;
+        margin-top: 0.4rem;
+        position: relative;
+        z-index: 5;
+        font-weight: var(--font-weight-semibold); /* Делаем подписи чуть жирнее */
+    }
+    
+    /* Усиливаем фон для подписей */
+    .timer-label::before {
+        content: "";
+        position: absolute;
+        top: -0.2rem;
+        left: -0.6rem;
+        right: -0.6rem;
+        bottom: -0.2rem;
+        background-color: var(--timer-bg-color);
+        z-index: -1;
+        border-radius: 0.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Сохраняем значительный вертикальный отступ в сетке на очень маленьких экранах */
+    .timer-blocks {
+        grid-row-gap: 2.75rem; /* Уменьшаем вдвое (было 5.5rem) */
+    }
+    
+    /* Уменьшаем размер ячеек на маленьких экранах */
+    .timer-digit {
+        width: var(--digit-width-mobile);
+        height: var(--digit-height-mobile);
+    }
+    
+    .timer-digit span {
+        font-size: var(--digit-font-size-mobile);
+    }
+}
+
+/* Дополнительная точка для уменьшения размеров ячеек перед переходом в сетку 2x2 */
+@media (max-width: 650px) and (min-width: 601px) {
+    .timer-digit {
+        width: calc(var(--digit-width-tablet) - 0.2rem);
+        height: calc(var(--digit-height-tablet) - 0.2rem);
+    }
+    
+    .timer-digit span {
+        font-size: calc(var(--digit-font-size-tablet) - 0.1rem);
+    }
+    
+    /* Уменьшаем отступы между блоками */
+    .timer-blocks {
+        gap: 0.8rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .timer-blocks {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+        gap: 0.7rem; /* Уменьшаем горизонтальный отступ с 1rem */
+        grid-row-gap: 2.75rem;
+        justify-items: center;
+        width: var(--timer-grid-width-mobile);
+        margin: 0 auto;
+        padding: 0; /* Убираем внутренние отступы */
+    }
+    
+    /* Уменьшаем размер ячеек в сетке 2x2 */
+    .timer-digit {
+        width: calc(var(--digit-width-small) - 0.15rem);
+        height: calc(var(--digit-height-small) - 0.15rem);
+    }
+    
+    .timer-digit span {
+        font-size: calc(var(--digit-font-size-small) - 0.05rem);
+    }
+    
+    /* Делаем контейнер таймера шире */
+    .countdown-timer {
+        padding: 1rem 0.5rem 1.5rem; /* Уменьшаем боковые отступы */
+        width: 100%; /* Контейнер на полную ширину */
+    }
+}
+
+/* Для очень узких экранов делаем еще меньше */
+@media (max-width: 400px) {
+    .timer-digit {
+        width: calc(var(--digit-width-mobile) - 0.1rem);
+        height: calc(var(--digit-height-mobile) - 0.1rem);
+    }
+    
+    .timer-blocks {
+        gap: 0.5rem; /* Еще уменьшаем горизонтальный отступ */
+    }
+}
+
+/* Контейнер для божьих коровок */
+.ladybugs-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+/* Стили для божьих коровок */
+.ladybug {
+    position: absolute;
+    width: var(--ladybug-size);
+    height: var(--ladybug-size);
+    pointer-events: auto !important;
+    cursor: pointer;
+    will-change: transform, left, top;
+    z-index: 1000;
+    overflow: visible;
+    transition: transform 0.3s ease;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.ladybug * {
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+}
+
+/* Тело божьей коровки */
+.ladybug-body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--ladybug-color);
+    border-radius: 50%;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    overflow: visible; /* Чтобы ножки могли выходить за пределы */
+}
+
+/* Пятна божьей коровки */
+.ladybug-spot {
+    position: absolute;
+    background-color: var(--ladybug-spots);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Глаза */
+.ladybug-eye {
+    position: absolute;
+    width: 25%;
+    height: 25%;
+    background-color: white;
+    border-radius: 50%;
+    top: 30%;
+    z-index: 3;
+}
+
+.ladybug-eye-left {
+    left: 20%;
+}
+
+.ladybug-eye-right {
+    right: 20%;
+}
+
+/* Улыбка божьей коровки */
+.ladybug-smile {
+    position: absolute;
+    width: 50%;
+    height: 25%;
+    border-bottom: 2px solid #210f4b;
+    border-radius: 0 0 50% 50%;
+    left: 25%;
+    top: 55%;
+    z-index: 3;
+}
+
+/* Усики */
+.ladybug-antenna {
+    position: absolute;
+    width: 5%;
+    height: 60%;
+    background-color: #210f4b;
+    top: -55%;
+    z-index: 2;
+    transform-origin: bottom center;
+    animation: antennaWiggle 2s ease-in-out infinite;
+}
+
+.ladybug-antenna-left {
+    left: 35%;
+    transform: rotate(-15deg);
+    animation-delay: -0.5s;
+}
+
+.ladybug-antenna-right {
+    right: 35%;
+    transform: rotate(15deg);
+    animation-delay: -1s;
+}
+
+/* Анимация для усиков */
+@keyframes antennaWiggle {
+    0%, 100% {
+        transform: rotate(-15deg);
+    }
+    50% {
+        transform: rotate(-5deg);
+    }
+}
+
+/* Разделительная линия */
+.ladybug-divider {
+    position: absolute;
+    width: 2%;
+    height: 100%;
+    background-color: #210f4b;
+    left: 49%;
+    top: 0;
+    z-index: 3;
+}
+
+/* Ножки божьей коровки */
+.ladybug-leg {
+    position: absolute;
+    width: 30%;
+    height: 1px;
+    background-color: #210f4b;
+    box-shadow: 0 1px 1px rgba(33, 15, 75, 0.2);
+    z-index: -5;
+}
+
+/* Голова божьей коровки */
+.ladybug-head {
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    background-color: #210f4b;
+    border-radius: 50%;
+    top: -15%;
+    left: 30%;
+    z-index: 2;
+    overflow: visible;
+}
+
+/* Расположение ножек - левая сторона */
+.ladybug-leg-1 {
+    top: 25%;
+    left: -15%;
+    width: 20%;
+    transform-origin: right center;
+    transform: rotate(-25deg);
+    animation: legMoveLeft 0.8s infinite alternate;
+}
+
+.ladybug-leg-2 {
+    top: 50%;
+    left: -15%;
+    width: 20%;
+    transform-origin: right center;
+    transform: rotate(0deg);
+    animation: legMoveLeft 0.8s infinite alternate;
+    animation-delay: 0.1s;
+}
+
+.ladybug-leg-3 {
+    top: 75%;
+    left: -15%;
+    width: 20%;
+    transform-origin: right center;
+    transform: rotate(25deg);
+    animation: legMoveLeft 0.8s infinite alternate;
+    animation-delay: 0.2s;
+}
+
+/* Расположение ножек - правая сторона */
+.ladybug-leg-4 {
+    top: 25%;
+    right: -15%;
+    left: auto;
+    width: 20%;
+    transform-origin: left center;
+    transform: rotate(25deg);
+    animation: legMoveRight 0.8s infinite alternate;
+}
+
+.ladybug-leg-5 {
+    top: 50%;
+    right: -15%;
+    left: auto;
+    width: 20%;
+    transform-origin: left center;
+    transform: rotate(0deg);
+    animation: legMoveRight 0.8s infinite alternate;
+    animation-delay: 0.1s;
+}
+
+.ladybug-leg-6 {
+    top: 75%;
+    right: -15%;
+    left: auto;
+    width: 20%;
+    transform-origin: left center;
+    transform: rotate(-25deg);
+    animation: legMoveRight 0.8s infinite alternate;
+    animation-delay: 0.2s;
+}
+
+/* Общие анимации для ножек */
+@keyframes legMoveLeft {
+    0% { transform: rotate(-25deg); }
+    100% { transform: rotate(15deg); }
+}
+
+@keyframes legMoveRight {
+    0% { transform: rotate(25deg); }
+    100% { transform: rotate(-15deg); }
+}
+
+/* Состояния божьей коровки */
+.ladybug.fleeing {
+    background-color: #FF6B6B; /* Красный при испуге */
+    animation: fleeBobble 0.3s infinite;
+}
+
+.ladybug.resting {
+    background-color: #DD3333; /* Темнее при отдыхе */
+    transform: scale(0.95);
+}
+
+/* Анимация для эффекта "испуга" */
+@keyframes fleeBobble {
+    0%, 100% {
+        transform: scale(1.05);
+    }
+    50% {
+        transform: scale(0.95);
+    }
+}
+
+/* Стили для счетчика просмотров */
+.views-counter {
+    position: absolute;
+    top: auto;
+    bottom: 0.5rem;
+    right: var(--logo-position-right); /* Выравниваем с надписью Faberlic */
+    display: flex;
+    align-items: center;
+    padding: 0.3rem 0.6rem; /* Было 0.25rem 0.5rem, увеличено в 1.2 раза */
+    background-color: var(--card-background);
+    border-radius: 1.2rem; /* Было 1rem, увеличено в 1.2 раза */
+    border: 1px solid #1a692f; /* Темно-зеленая обводка */
+    font-family: var(--font-primary);
+    z-index: 2; /* Уменьшаем z-index, чтобы не перекрывать другие элементы */
+}
+
+.views-icon {
+    width: 1.44rem; /* Было 1.2rem, увеличено в 1.2 раза */
+    height: 1.44rem; /* Было 1.2rem, увеличено в 1.2 раза */
+    margin-right: 0.36rem; /* Было 0.3rem, увеличено в 1.2 раза */
+    filter: invert(26%) sepia(79%) saturate(545%) hue-rotate(102deg) brightness(91%) contrast(89%); /* Темно-зеленый цвет для иконки */
+}
+
+.views-count {
+    display: flex;
+    align-items: center;
+    color: #1a692f; /* Темно-зеленый цвет для текста */
+    font-weight: var(--font-weight-semibold);
+    font-size: 1.08rem; /* Было 0.9rem, увеличено в 1.2 раза */
+}
+
+.views-digit {
+    position: relative;
+    margin: 0 0.01rem;
+}
+
+.views-digit-front, .views-digit-back {
+    display: none;
+}
+
+.views-digit span {
+    position: relative;
+    color: #1a692f; /* Темно-зеленый цвет для цифр */
+    font-weight: var(--font-weight-semibold);
+}
+
+/* Медиа-запросы для адаптивности счетчика просмотров */
+@media (max-width: 768px) {
+    .views-counter {
+        bottom: 0.48rem; /* Было 0.4rem, увеличено в 1.2 раза */
+        right: var(--logo-position-right);
+        padding: 0.24rem 0.48rem; /* Было 0.2rem 0.4rem, увеличено в 1.2 раза */
+    }
+    
+    .views-icon {
+        width: 1.2rem; /* Было 1rem, увеличено в 1.2 раза */
+        height: 1.2rem; /* Было 1rem, увеличено в 1.2 раза */
+    }
+    
+    .views-count {
+        font-size: 0.96rem; /* Было 0.8rem, увеличено в 1.2 раза */
+    }
+}
+
+@media (max-width: 480px) {
+    .views-counter {
+        bottom: 0.36rem; /* Было 0.3rem, увеличено в 1.2 раза */
+        right: var(--logo-position-right);
+        padding: 0.18rem 0.36rem; /* Было 0.15rem 0.3rem, увеличено в 1.2 раза */
+    }
+    
+    .views-icon {
+        width: 1.08rem; /* Было 0.9rem, увеличено в 1.2 раза */
+        height: 1.08rem; /* Было 0.9rem, увеличено в 1.2 раза */
+    }
+    
+    .views-count {
+        font-size: 0.84rem; /* Было 0.7rem, увеличено в 1.2 раза */
+    }
+}
+
+/* Стили для блока с информацией о товаре */
+.product-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background-color: var(--product-bg-color);
+    border-radius: var(--card-border-radius);
+    border: var(--card-border-width) solid var(--card-border-color);
+    padding: 0;
+    margin: 0 auto;
+    margin-bottom: 0.5rem; /* Вдвое уменьшенный отступ между блоками */
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.product-header {
+    font-size: var(--timer-header-font-size);
+    color: var(--timer-header-text);
+    font-weight: var(--timer-header-font-weight);
+    margin-bottom: var(--timer-header-margin-bottom);
+    text-align: center;
+    width: 100%;
+}
+
+.product-content {
+    display: flex;
+    width: 100%;
+    gap: 0;
+    align-items: stretch;
+    justify-content: flex-start;
+    min-height: 0;
+}
+
+.product-image {
+    flex: 1.5;
+    min-width: 320px;
+    max-width: 55%;
+    padding: 0;
+    margin: 0;
+    background-color: var(--product-image-bg-color);
+    display: flex; /* Используем flex для центрирования */
+    align-items: center; /* Центрируем изображение по вертикали */
+    justify-content: center; /* Центрируем изображение по горизонтали */
+    overflow: hidden;
+    border: 2px dashed #1a692f;
+    line-height: 0;
+    border-radius: var(--card-border-radius) 0 0 var(--card-border-radius); /* Скругляем только левые углы */
+    height: auto; /* Удаляем фиксированную высоту */
+}
+
+.product-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    border-radius: calc(var(--card-border-radius) - 2px) 0 0 calc(var(--card-border-radius) - 2px); /* Скругляем только левые углы */
+    max-height: 100%; /* Ограничиваем максимальную высоту */
+}
+
+.product-description {
+    flex: 1;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+    padding: 1rem 1.5rem 1rem 0;
+}
+
+.description-title {
+    color: var(--card-main-text);
+    font-size: 1.25rem;
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: 1rem;
+}
+
+.product-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.product-item {
+    position: relative;
+    padding-left: 1.25rem;
+    margin-bottom: 0.8rem;
+    color: var(--card-main-text);
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.product-item::before {
+    content: "•";
+    position: absolute;
+    left: 0.25rem;
+    color: var(--card-border-color);
+    font-weight: bold;
+}
+
+/* Адаптивность для блока информации о товаре */
+@media (max-width: 768px) {
+    .product-info {
+        padding: 0;
+    }
+    
+    .product-image {
+        min-width: 250px;
+        max-width: 50%;
+    }
+    
+    .product-description {
+        padding: 0.75rem 1rem 0.75rem 0;
+    }
+    
+    .product-photo {
+        min-height: 220px;
+    }
+}
+
+@media (max-width: 600px) {
+    .product-content {
+        flex-direction: column;
+        align-items: center; /* Центрируем изображение на маленьких экранах */
+    }
+    
+    .product-image {
+        width: 100%;
+        max-width: 100%; /* Блок занимает всю ширину */
+        margin: 0; /* Убираем все отступы */
+        border-radius: var(--card-border-radius) var(--card-border-radius) 0 0; /* Скругляем только верхние углы на мобильном */
+    }
+    
+    .product-photo {
+        min-height: auto; /* Убираем минимальную высоту */
+        height: auto;
+        border-radius: calc(var(--card-border-radius) - 2px) calc(var(--card-border-radius) - 2px) 0 0; /* Скругляем только верхние углы на мобильном */
+    }
+    
+    .product-description {
+        padding: 1rem;
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .product-list {
+        margin-bottom: 0; /* Убираем нижний отступ у списка */
+    }
+}
+
+/* Анимация для усиков в режиме злости */
+@keyframes antennaShake {
+    0%, 100% {
+        transform: rotate(-30deg);
+    }
+    50% {
+        transform: rotate(30deg);
+    }
+}
+
+/* Стиль для божьей коровки при перетаскивании */
+.ladybug.dragging {
+    cursor: grabbing !important;
+    filter: saturate(1.5);
+    pointer-events: auto !important;
+    z-index: 1100 !important;
+}
+
+/* Убираем квадратик при перетаскивании */
+.ladybug * {
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+}
+
+.ladybug-body, .ladybug-head, .ladybug-spot, 
+.ladybug-eye, .ladybug-smile, .ladybug-antenna, 
+.ladybug-divider, .ladybug-leg {
+    pointer-events: none;
+}
+
+/* Убираем стандартное выделение при перетаскивании */
+.ladybug::before, .ladybug::after,
+.ladybug *::before, .ladybug *::after {
+    box-sizing: border-box;
+}
+
+/* Стиль для элементов гнева божьей коровки */
+.ladybug-anger-sign {
+    position: absolute;
+    display: inline-block;
+    line-height: 1;
+    font-family: 'Arial', sans-serif;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
+    pointer-events: none;
+}
+
+/* ======= СТИЛИ ДЛЯ БЛОКА С КНОПКОЙ WHATSAPP ======= */
+.whatsapp-block {
+    background-color: var(--card-bg-color);
+    border: var(--card-border-width) solid var(--card-border-color);
+    border-radius: var(--card-border-radius);
+    padding: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem; /* Увеличиваем отступ снизу */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.whatsapp-text {
+    font-family: var(--font-primary);
+    font-weight: var(--timer-header-font-weight);
+    font-size: var(--timer-header-font-size);
+    color: var(--timer-header-text);
+    margin-bottom: var(--timer-header-margin-bottom);
+    text-align: center;
+    font-style: var(--timer-header-font-style);
+}
+
+.whatsapp-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: none;
+    color: var(--whatsapp-text-color);
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-normal); /* Было var(--font-weight-semibold), меняем на normal */
+    font-size: 1.4rem;
+    padding: 0.8rem 2rem;
+    border-radius: 0.8rem; /* Было 2rem, сделал меньше скругление */
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    letter-spacing: var(--price-letter-spacing);
+    z-index: 1;
+    width: auto;
+    min-width: 200px;
+    transform: translate(-4px, -4px);
+    text-shadow: none; /* Убираем тень текста */
+    /* Убираем розовую обводку */
+    /* border: var(--card-border-width) solid var(--card-border-color); */
+    /* box-sizing: border-box; */ /* Уже не нужно */
+}
+
+.whatsapp-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--whatsapp-bottom-color);
+    border-radius: 0.8rem; /* Было 2rem, сделал меньше скругление */
+    z-index: -2;
+    transform: translate(4px, 4px);
+}
+
+.whatsapp-button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Используем переменные для градиента */
+    background: radial-gradient(circle at center, var(--whatsapp-top-color-1) 0%, var(--whatsapp-top-color-2) 50%, var(--whatsapp-top-color-3) 100%);
+    background-size: 300% 300%; /* Увеличиваем размер для более плавного переливания */
+    border-radius: 0.8rem; /* Было 2rem, сделал меньше скругление */
+    z-index: -1;
+    transform: none;
+    animation: whatsappGradientMove 8s ease-in-out infinite; /* Увеличиваем время до 8 секунд для большей плавности */
+    box-shadow: none; /* Убираем тень */
+}
+
+/* Добавляем эффект зернистости с помощью псевдоэлемента */
+.whatsapp-button span::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+    opacity: var(--whatsapp-grain-opacity);
+    border-radius: 0.8rem; /* Было 2rem, сделал меньше скругление */
+    z-index: 1;
+    pointer-events: none;
+    animation: noiseAnimation 3s linear infinite;
+}
+
+.button-text, .whatsapp-icon {
+    position: relative;
+    z-index: 2;
+}
+
+.whatsapp-icon {
+    width: 1.8rem;
+    height: 1.8rem;
+    margin-right: 0.8rem;
+    filter: brightness(0) invert(1); /* Убираем drop-shadow */
+}
+
+@media (max-width: 768px) {
+    .whatsapp-text {
+        font-size: var(--timer-header-font-size-tablet);
+        margin-bottom: calc(var(--timer-header-margin-bottom) * 0.9);
+    }
+    
+    .whatsapp-button {
+        font-size: 1.2rem;
+        padding: 0.7rem 1.8rem;
+        min-width: 180px;
+        transform: translate(-3px, -3px);
+    }
+    
+    .whatsapp-button::before {
+        transform: translate(3px, 3px);
+    }
+    
+    .whatsapp-button:hover {
+        transform: translate(-3px, -5px);
+    }
+    
+    .whatsapp-button:active {
+        transform: translate(-3px, -3px);
+    }
+    
+    .whatsapp-button:active::after {
+        transform: translate(1px, 1px);
+    }
+    
+    .whatsapp-icon {
+        width: 1.6rem;
+        height: 1.6rem;
+        margin-right: 0.6rem;
+        filter: brightness(0) invert(1); /* Убираем drop-shadow */
+    }
+}
+
+@media (max-width: 480px) {
+    .whatsapp-block {
+        padding: 1.2rem;
+        margin-top: 0;
+        margin-bottom: 0.5rem; /* Стандартный отступ между блоками */
+    }
+    
+    .whatsapp-text {
+        font-size: var(--timer-header-font-size-mobile);
+        margin-bottom: var(--timer-header-margin-mobile);
+    }
+    
+    .whatsapp-button {
+        font-size: 1.1rem;
+        padding: 0.6rem 1.5rem;
+        min-width: 160px;
+        max-width: 250px;
+        transform: translate(-2px, -2px);
+    }
+    
+    .whatsapp-button::before {
+        transform: translate(2px, 2px);
+    }
+    
+    .whatsapp-button:hover {
+        transform: translate(-2px, -4px);
+    }
+    
+    .whatsapp-button:active {
+        transform: translate(-2px, -2px);
+    }
+    
+    .whatsapp-button:active::after {
+        transform: translate(1px, 1px);
+    }
+    
+    .whatsapp-icon {
+        width: 1.4rem;
+        height: 1.4rem;
+        filter: brightness(0) invert(1); /* Убираем drop-shadow */
+    }
+}
+
+/* Анимация для переливания кнопки WhatsApp */
+@keyframes whatsappGradientMove {
+    0% {
+        background-position: 0% 0%;
+        filter: saturate(1) brightness(1);
+    }
+    25% {
+        background-position: 25% 25%;
+        filter: saturate(1.05) brightness(1.05);
+    }
+    50% {
+        background-position: 50% 50%;
+        filter: saturate(1.1) brightness(1.1);
+    }
+    75% {
+        background-position: 75% 75%;
+        filter: saturate(1.05) brightness(1.05);
+    }
+    100% {
+        background-position: 0% 0%;
+        filter: saturate(1) brightness(1);
+    }
+}
+
+.whatsapp-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--whatsapp-bottom-color);
+    border-radius: 0.8rem; /* Было 2rem, сделал меньше скругление */
+    z-index: -2;
+    transform: translate(4px, 4px);
+}
+
+.whatsapp-button:hover {
+    transform: translate(-4px, -6px);
+}
+
+.whatsapp-button:active {
+    transform: translate(-4px, -4px);
+}
+
+.whatsapp-button:active::after {
+    transform: translate(2px, 2px);
+}
+
+/* Оптимизации для мобильных устройств */
+@media (max-width: 768px) {
+    .ladybug {
+        /* Уменьшаем размер божьих коровок на мобильных */
+        width: calc(var(--ladybug-size) * 0.85);
+        height: calc(var(--ladybug-size) * 0.85);
+        /* Ускоряем переходы для более отзывчивого интерфейса */
+        transition: transform 0.2s ease;
+        /* Оптимизации рендеринга */
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+    }
+    
+    /* Упрощаем анимацию на мобильных устройствах */
+    .ladybug-antenna {
+        animation-duration: 2.5s !important;
+    }
+    
+    /* Уменьшаем интенсивность анимаций для экономии ресурсов */
+    .ladybug-leg {
+        animation-duration: 1.5s !important;
+    }
+}
+
+/* ======= СТИЛИ ДЛЯ БЛОКА С ПРЕДЛОЖЕНИЕМ ПОДАРКА ======= */
+.gift-offer-block {
+    /* Стили остаются похожими на .product-info */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background-color: var(--product-bg-color); /* Тот же фон */
+    border-radius: var(--card-border-radius);
+    border: var(--card-border-width) solid var(--card-border-color);
+    padding: 0; /* Убираем внешний padding, как у .product-info */
+    margin: 0 auto 0.5rem; 
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.gift-content {
+    /* Копируем из .product-content */
+    display: flex;
+    width: 100%;
+    gap: 0;
+    align-items: stretch;
+    justify-content: flex-start;
+    min-height: 0;
+}
+
+.gift-image-wrapper {
+    /* Копируем из .product-image */
+    flex: 1.5; 
+    min-width: 320px; 
+    max-width: 55%;
+    padding: 0;
+    margin: 0;
+    background-color: var(--product-image-bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 2px dashed #1a692f; 
+    line-height: 0;
+    border-radius: var(--card-border-radius) 0 0 var(--card-border-radius); 
+    height: auto;
+    min-width: 0; /* Сбрасываем min-width для flex */
+}
+
+.gift-image {
+    /* Копируем из .product-photo */
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    border-radius: calc(var(--card-border-radius) - 2px) 0 0 calc(var(--card-border-radius) - 2px); 
+    max-height: 100%;
+}
+
+.gift-details {
+    /* Копируем из .product-description */
+    flex: 1;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    margin-left: 0; /* Убрали gap, отступ не нужен */
+    padding: 1rem 1.5rem 1rem 1rem; /* Отступ внутри текстового блока */
+}
+
+/* Стили для текстовых элементов внутри .gift-details остаются */
+.gift-date {
+    font-family: var(--font-primary);
+    font-size: 0.9rem; 
+    font-weight: var(--font-weight-normal);
+    color: var(--timer-label-text); 
+    margin-bottom: 0.5rem;
+}
+
+.gift-description {
+    font-family: var(--font-primary);
+    font-size: 1.1rem; 
+    font-weight: var(--font-weight-normal);
+    color: var(--card-main-text); 
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.gift-name {
+    font-family: var(--font-primary);
+    font-size: 1.1rem; 
+    font-weight: var(--font-weight-semibold);
+    color: var(--card-main-text);
+    line-height: 1.4;
+    margin-bottom: 1.5rem; /* Отступ перед кнопкой */
+}
+
+.gift-button {
+    margin-top: auto; /* Прижимаем кнопку к низу */
+    align-self: center; /* Центрируем саму кнопку */
+}
+
+/* Добавляем выравнивание текста внутри кнопки */
+.gift-button .button-text {
+    text-align: center;
+    width: 100%; /* Позволяем тексту занимать всю ширину кнопки для центрирования */
+}
+
+/* Адаптивность для блока подарка */
+@media (max-width: 768px) {
+    /* .gift-offer-block стили не меняем */
+
+    /* .gift-content стили не меняем */
+
+    .gift-image-wrapper {
+        /* Копируем из @media .product-image */
+        min-width: 250px;
+        max-width: 50%;
+    }
+
+    .gift-details {
+         /* Копируем из @media .product-description */
+         padding: 0.75rem 1rem 0.75rem 1rem; 
+    }
+
+    /* Стили текста и кнопки можно подкорректировать, если нужно */
+    .gift-description,
+    .gift-name {
+        font-size: 1rem;
+    }
+
+    .gift-button {
+        align-self: center; /* Центрируем кнопку на планшетах */
+        margin-top: 1rem; /* Добавляем отступ сверху */
+    }
+}
+
+@media (max-width: 600px) {
+    /* .gift-offer-block без изменений */
+
+    .gift-content {
+        /* Копируем из @media .product-content */
+        flex-direction: column; 
+        align-items: stretch; 
+        width: 100%;
+    }
+
+    .gift-image-wrapper {
+        /* Копируем из @media .product-image */
+        width: calc(100% + 4px);
+        max-width: none;
+        margin: 0 -2px;
+        padding: 0;
+        border-radius: var(--card-border-radius) var(--card-border-radius) 0 0;
+        position: relative;
+        left: 0;
+        right: 0;
+        min-width: auto; /* Убираем */
+        height: auto; /* Убираем */
+        flex-basis: auto; /* Убираем */
+        border: 2px dashed #1a692f; /* Восстанавливаем рамку */
+        border-bottom: none; /* Убираем нижнюю */
+    }
+
+    .gift-image {
+        /* Копируем из @media .product-photo */
+        min-height: auto;
+        height: auto;
+        width: 100%;
+        border-radius: calc(var(--card-border-radius) - 2px) calc(var(--card-border-radius) - 2px) 0 0;
+        max-height: none; /* Убираем ограничение */
+        display: block;
+    }
+
+    .gift-details {
+        /* Копируем из @media .product-description */
+        padding: 1rem;
+        margin-left: 0;
+        width: 100%;
+        align-items: center; /* Центрируем текст */
+        text-align: center; /* Центрируем текст */
+        border-top: 2px dashed #1a692f; /* Добавляем рамку сверху */
+    }
+
+    /* Стили текста можно оставить или адаптировать */
+    .gift-name {
+        margin-bottom: 1.5rem; /* Отступ перед кнопкой */
+    }
+
+    .gift-button {
+        align-self: center; 
+        margin-top: 0; /* Отступ создается за счет margin-bottom у .gift-name */
+    }
+}
+
+@media (max-width: 480px) {
+    /* В основном наследуем стили от 600px */
+
+    /* Убираем внешний padding у родителя */
+    .gift-offer-block {
+        padding: 0;
+    }
+
+    /* Можно уменьшить шрифты текста */
+    .gift-date {
+        font-size: 0.8rem;
+    }
+
+    .gift-description,
+    .gift-name {
+        font-size: 0.9rem; 
+    }
+
+    .gift-button {
+        width: 90%; 
+        max-width: 250px; 
+        padding: 0.6rem 1rem; 
+        font-size: 1rem;
+    }
+}
+
+/* --- Конец стилей для блока подарка --- */
+  
+/* Добавляем стили для нового блока "Хотите подарок?" */
+.gift-promo-bar {
+    margin-top: 1.5rem; /* Увеличиваем отступ сверху */
+    /* Наследует градиент и другие стили от .promo-bar */
+    /* Можно добавить/переопределить стили, если нужно */
+}
+
+.gift-promo-text {
+    /* Переопределяем стили для текста, чтобы он был по центру и не бежал */
+    text-align: center;
+    white-space: normal; /* Разрешаем перенос текста, если он длинный */
+    display: block; /* Убеждаемся, что это блочный элемент для центрирования */
+    /* Можно добавить/переопределить стили шрифта, если нужно */
+    font-style: italic; /* Сохраняем курсив */
+    font-size: var(--promo-font-size); /* Используем тот же размер */
+    font-weight: var(--promo-font-weight); /* Используем ту же жирность */
+    color: var(--promo-text-color); /* Используем тот же цвет */
+}
+
+/* --- Конец стилей для блока пояснений --- */
+
+/* ======= СТИЛИ ДЛЯ БЛОКА С ПОЯСНЕНИЯМИ ======= */
+.explanation-block {
+    background-color: var(--card-bg-color); /* Используем тот же фон */
+    border: var(--card-border-width) solid var(--card-border-color); /* Та же рамка */
+    border-radius: var(--card-border-radius); /* То же скругление */
+    padding: 1.5rem; /* Стандартный отступ */
+    margin: 0 auto 0.5rem; /* Стандартный нижний отступ */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.explanation-list {
+    list-style: none; /* Убираем стандартные маркеры */
+    padding: 0;
+    margin: 0;
+}
+
+.explanation-item {
+    position: relative;
+    padding-left: 1.25rem; /* Отступ для кастомного маркера */
+    margin-bottom: 0.8rem; /* Отступ между пунктами */
+    color: var(--card-main-text); /* Основной цвет текста */
+    font-size: 1rem; /* Стандартный размер текста */
+    line-height: 1.5; /* Увеличиваем межстрочный интервал */
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-normal);
+}
+
+.explanation-item::before {
+    content: "•"; /* Кастомный маркер-точка */
+    position: absolute;
+    left: 0.25rem;
+    color: var(--card-border-color); /* Цвет маркера как у рамки */
+    font-weight: bold;
+    font-size: 1.1em; /* Чуть крупнее текста */
+}
+
+.explanation-item:last-child {
+    margin-bottom: 0; /* Убираем отступ у последнего пункта */
+}
+
+/* Адаптивность для блока пояснений */
+@media (max-width: 768px) {
+    .explanation-block {
+        padding: 1.2rem; /* Уменьшаем отступы */
+    }
+    .explanation-item {
+        font-size: 0.95rem; /* Немного уменьшаем шрифт */
+    }
+}
+
+@media (max-width: 480px) {
+    .explanation-block {
+        padding: 1rem; /* Еще уменьшаем отступы */
+    }
+    .explanation-item {
+        font-size: 0.9rem; /* Еще уменьшаем шрифт */
+        padding-left: 1.1rem;
+        line-height: 1.4;
+    }
+    .explanation-item::before {
+        left: 0.15rem;
+    }
+}
+
+/* --- Конец стилей для блока пояснений --- */
+  
+/* ======= СТИЛИ ДЛЯ ГОРИЗОНТАЛЬНОГО РАЗДЕЛИТЕЛЯ ======= */
+.section-divider {
+    border: none; 
+    height: 3px; 
+    background: linear-gradient(90deg, 
+        var(--promo-gradient-start) 0%, 
+        var(--promo-gradient-middle1) 35%, 
+        var(--promo-gradient-middle2) 65%, 
+        var(--promo-gradient-end) 100%
+    ); 
+    background-size: 300% 100%; 
+    animation: gradientMove 20s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite; 
+    margin: 1.5rem auto; 
+    width: 100%; 
+    border-radius: 2px; 
+}
+
+@media (max-width: 768px) {
+    .section-divider {
+        margin: 1.2rem auto; 
+    }
+}
+
+@media (max-width: 480px) {
+    .section-divider {
+        margin: 1rem auto; 
+        height: 2px; 
+    }
+}
+
+/* --- Конец стилей для блока пояснений --- */
+
+/* ======= СТИЛИ ДЛЯ СЕКЦИИ "ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ" ======= */
+.more-info-section {
+    /* Этот контейнер можно не стилизовать особо, 
+       он просто группирует блоки */
+    margin-top: 1.5rem; /* Отступ сверху (оставляем большим) */
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem; /* Увеличиваем отступ */
+}
+
+/* Общий стиль для заголовков секций */
+.section-title {
+    font-family: var(--font-primary);
+    font-size: 1.5rem; /* Размер как у заголовка таймера */
+    font-weight: var(--font-weight-normal); /* Уменьшаем жирность по умолчанию */
+    color: var(--timer-header-text); /* Цвет как у заголовков */
+    text-align: center;
+    margin-bottom: 1.25rem;
+}
+
+/* --- Блок QR-кодов --- */
+.app-download-block {
+    background-color: #f0f0f0; /* Светло-серый фон */
+    border: var(--card-border-width) solid var(--card-border-color); /* Розовая рамка */
+    border-radius: var(--card-border-radius);
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+
+.qr-codes-container {
+    display: flex;
+    justify-content: space-around; /* Распределяем QR-коды */
+    align-items: flex-start;
+    flex-wrap: wrap; /* Разрешаем перенос на маленьких экранах */
+    gap: 1.5rem;
+}
+
+.qr-code-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.qr-code-img {
+    width: 120px; /* Размер QR-кода */
+    height: 120px;
+    margin-bottom: 0.5rem;
+    /* Заменяем рамку на розовую */
+    border: var(--card-border-width) solid var(--card-border-color);
+    padding: 5px; /* Небольшой отступ внутри рамки */
+    background-color: var(--color-white);
+}
+
+.qr-code-label {
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    color: var(--card-main-text);
+}
+
+/* --- Блок "Что ещё?" --- */
+.benefits-block {
+    background-color: var(--card-bg-color); /* Стандартный зеленый фон */
+    border: var(--card-border-width) solid var(--card-border-color); /* Розовая рамка */
+    border-radius: var(--card-border-radius);
+    padding: 1.5rem;
+    box-sizing: border-box;
+    margin: 0 auto 1.5rem; /* Добавляем увеличенный отступ снизу */
+}
+
+.benefits-title {
+    /* Убираем розовый цвет, жирность и курсив */
+    color: var(--timer-header-text); 
+    font-weight: var(--font-weight-normal);
+    font-style: normal;
+    /* Можно сделать чуть крупнее, если нужно выделить */
+    /* font-size: 1.6rem; */ 
+    text-transform: uppercase; /* Оставляем капс */
+}
+
+.benefits-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Отступ между пунктами */
+}
+
+.benefit-item {
+    display: flex;
+    /* align-items: flex-start; Убираем, т.к. нет иконки */
+    /* gap: 0.8rem; Убираем, т.к. нет иконки */
+    position: relative; 
+    padding-left: 1.25rem; /* Оставляем отступ для маркера */
+    /* Убеждаемся, что маркер позиционируется правильно */
+}
+
+/* Добавляем маркер вместо иконки */
+.benefit-item::before {
+    content: "•";
+    position: absolute;
+    left: 0.25rem;
+    top: 0.1em; /* Позиционируем маркер */
+    color: var(--card-border-color); /* Розовый маркер */
+    font-weight: bold;
+    font-size: 1.1em; 
+}
+
+/* Удаляем стили для иконки */
+/* 
+.benefit-icon {
+    width: 24px; 
+    height: 24px;
+    flex-shrink: 0; 
+     filter: invert(39%) sepia(63%) saturate(4767%) hue-rotate(295deg) brightness(100%) contrast(101%); 
+}
+*/
+
+.benefit-text {
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    color: var(--card-main-text);
+    line-height: 1.4;
+}
+
+/* --- Блок соцсетей --- */
+.social-share-block {
+    background-color: #f0f0f0; /* Светло-серый фон */
+    border: var(--card-border-width) solid var(--card-border-color); /* Розовая рамка */
+    border-radius: var(--card-border-radius);
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: center; /* Центрируем кнопки */
+    align-items: center;
+    flex-wrap: wrap; /* Перенос на маленьких экранах */
+    gap: 1rem;
+}
+
+.social-buttons {
+    display: flex;
+    gap: 1.5rem; /* Ещё увеличиваем отступ */
+}
+
+.social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px; /* Ещё увеличиваем размер кнопки */
+    height: 52px; /* Ещё увеличиваем размер кнопки */
+    border-radius: 50%; /* Круглая форма */
+    text-decoration: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    /* Добавляем розовую рамку */
+    border: var(--card-border-width) solid var(--card-border-color);
+    box-sizing: border-box; /* Учитываем рамку в размере */
+}
+
+.social-button:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+.social-icon {
+    width: 28px; /* Ещё увеличиваем иконку */
+    height: 28px; /* Ещё увеличиваем иконку */
+    filter: brightness(0) invert(1); /* Делаем иконки белыми */
+}
+
+/* Цвета кнопок соцсетей */
+.social-button.instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.social-button.telegram {
+    background-color: #0088cc;
+}
+
+.social-button.tiktok {
+    background-color: #000000; /* Или градиент #ff0050, #00f2ea */
+}
+
+/* Адаптивность для новой секции */
+@media (max-width: 768px) {
+    .more-info-section {
+        gap: 0.5rem; /* Стандартный отступ */
+    }
+    .section-title {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+    .app-download-block, .benefits-block {
+        padding: 1.2rem;
+    }
+    .qr-code-img {
+        width: 100px;
+        height: 100px;
+    }
+    .benefit-item {
+        /* gap: 0.6rem; */
+        padding-left: 1.1rem; /* Адаптируем отступ */
+    }
+    .benefit-icon {
+        width: 20px;
+        height: 20px;
+    }
+    .social-share-block {
+        justify-content: center; /* Центрируем на планшете */
+    }
+}
+
+@media (max-width: 480px) {
+    .more-info-section {
+        gap: 0.5rem; /* Стандартный отступ */
+        margin-top: 1rem;
+    }
+    .section-title {
+        font-size: 1.2rem;
+    }
+    .app-download-block, .benefits-block, .social-share-block {
+        padding: 1rem;
+    }
+    .qr-codes-container {
+        justify-content: center; /* Центрируем QR-коды */
+        gap: 1rem;
+    }
+    .qr-code-img {
+        width: 90px;
+        height: 90px;
+        /* Розовая рамка наследуется */
+    }
+    .benefit-text {
+        font-size: 1rem; /* Ещё увеличиваем шрифт */
+    }
+    .social-button {
+        width: 52px; /* Ещё увеличиваем размер */
+        height: 52px;
+        /* Розовая рамка наследуется */
+    }
+    .social-icon {
+        width: 28px; /* Ещё увеличиваем иконку */
+        height: 28px;
+    }
+    /* Увеличиваем отступ между кнопками */
+    .social-buttons {
+        gap: 1.5rem;
+    }
+}
+
+/* --- Конец стилей для ДОП. ИНФО --- */
