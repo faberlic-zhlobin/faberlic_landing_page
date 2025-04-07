@@ -6,7 +6,7 @@ class CountdownTimer {
     private daysTens: HTMLElement | null;
     private daysOnes: HTMLElement | null;
     private hoursTens: HTMLElement | null;
-    private hoursOnes: HTMLElement | null;
+    private hoursOnes: HTMLElement | null; //fvefvvfv
     private minutesTens: HTMLElement | null;
     private minutesOnes: HTMLElement | null;
     private secondsTens: HTMLElement | null;
