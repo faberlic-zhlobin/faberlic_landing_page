@@ -4,8 +4,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
-    "watch": "tsc --watch",
+    "prebuild": "chmod +x node_modules/.bin/tsc",
+    "build": "npx tsc",
+    "watch": "npx tsc --watch",
     "start": "npx serve"
   },
   "keywords": [],
