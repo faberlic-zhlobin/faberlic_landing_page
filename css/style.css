@@ -393,22 +393,7 @@ html {
 
 body {
     background-color: var(--body-bg-color);
-    background-image: 
-        /* Вертикальные линии */
-        linear-gradient(90deg, 
-            transparent calc(var(--grid-size) - 1px),
-            var(--grid-color) calc(var(--grid-size) - 1px),
-            var(--grid-color) var(--grid-size),
-            transparent var(--grid-size)
-        ),
-        /* Горизонтальные линии */
-        linear-gradient(0deg, 
-            transparent calc(var(--grid-size) - 1px),
-            var(--grid-color) calc(var(--grid-size) - 1px),
-            var(--grid-color) var(--grid-size),
-            transparent var(--grid-size)
-        );
-    background-size: var(--grid-size) var(--grid-size);
+    background-image: none;
     display: flex;
     justify-content: center;
     align-items: flex-start;
