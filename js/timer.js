@@ -209,8 +209,8 @@ style.textContent = `
     position: absolute;
     top: 0;
     left: 0;
-    width: calc(100% - 3px);
-    height: calc(100% - 7px);
+    width: calc(100% - 2px);
+    height: calc(100% - 4px);
     background-color: var(--digit-bg-color);
     border-radius: var(--digit-border-radius);
     z-index: 1;
@@ -222,15 +222,12 @@ style.textContent = `
 }
 
 .timer-digit {
-    min-width: 56px;
-    min-height: 84px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .timer-digit span {
-    font-size: 2.8rem;
 }
 
 @media (max-width: 768px) {
@@ -241,7 +238,7 @@ style.textContent = `
     
     .timer-unit-dark-bg {
         background-color: var(--digit-back-color) !important;
-        border-radius: calc(var(--digit-border-radius) + 3px) !important;
+        border-radius: calc(var(--digit-border-radius) + 2px) !important;
         z-index: 0 !important;
         width: 100% !important;
         height: 100% !important;
@@ -251,60 +248,36 @@ style.textContent = `
         background-color: var(--digit-bg-color) !important;
         border-radius: var(--digit-border-radius) !important;
         z-index: 1 !important;
-        width: calc(100% - 3px) !important;
-        height: calc(100% - 7px) !important;
+        width: calc(100% - 2px) !important;
+        height: calc(100% - 4px) !important;
     }
     
     .digit-separator {
-        left: calc(50% - 4px) !important;
     }
     
     .timer-digit {
-        min-width: 49px;
-        min-height: 70px;
     }
     
     .timer-digit span {
-        font-size: 2.45rem;
     }
 }
 
 @media (max-width: 600px) {
-    .timer-blocks {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr) !important;
-        grid-gap: 15px !important;
-        margin: 0 auto;
-        width: 95% !important;
-        max-width: 500px !important;
-    }
-    
     .timer-digit {
-        min-width: 42px !important;
-        min-height: 63px !important;
     }
     
     .timer-digit span {
-        font-size: 2.1rem !important;
     }
     
     .timer-block {
-        margin-bottom: 14px !important;
     }
 }
 
 @media (max-width: 400px) {
     .timer-digit {
-        min-width: 39px !important;
-        min-height: 59px !important;
     }
     
     .timer-digit span {
-        font-size: 2rem !important;
-    }
-    
-    .timer-blocks {
-        grid-gap: 14px !important;
     }
 }
 `;

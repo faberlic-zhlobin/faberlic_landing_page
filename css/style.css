@@ -111,23 +111,18 @@
     --promo-gradient-end: #FF00C1;        /* Насыщенный розовый цвет */
     --promo-text: #ffffff;                /* Цвет текста "Акция" */
 
-    /* ======= ЦВЕТА ТАЙМЕРА ======= */
-    --timer-background: #90ffa0;          /* Фон блока таймера */
-    --timer-border: #FF59C8;             /* Цвет рамки таймера */
-    --timer-header-text: #1E2A4A;        /* Цвет текста заголовка таймера - более синеватый */
-    
-    /* Цвета цифр таймера */
-    --timer-digit-top-block: #a1dce6;    /* Цвет верхнего прямоугольника цифры */
-    --timer-digit-bottom-block: #597db4;  /* Цвет нижнего прямоугольника цифры */
-    --timer-digit-text: #2f5b9b;         /* Цвет текста цифр */
-    --timer-separator: #004c58;          /* Цвет разделителей (двоеточий) */
-    --timer-label-text: #1E2A4A;         /* Цвет подписей (дни, часы и т.д.) - более синеватый */
+    /* ======= ЦВЕТА ТАЙМЕРА (ОБЩИЕ ДЛЯ СТАРОГО И НОВОГО ВАРИАНТА) ======= */
+    --timer-header-text: #1E2A4A;
+    --timer-digit-top-block: #a1dce6;
+    --timer-digit-bottom-block: #597db4;
+    --timer-digit-text: #2f5b9b;
+    --timer-separator: #004c58;
+    --timer-label-text: #1E2A4A;
 
     /* Обновляем все использования цветов на новые переменные */
     --price-bg-color: linear-gradient(90deg, var(--price-gradient-start) 0%, var(--price-gradient-middle) 50%, var(--price-gradient-end) 100%);
     --promo-bg-color: linear-gradient(90deg, var(--promo-gradient-start) 0%, var(--promo-gradient-middle1) 35%, var(--promo-gradient-middle2) 65%, var(--promo-gradient-end) 100%);
     
-    /* Заменяем старые переменные на новые */
     --card-bg-color: var(--card-background);
     --card-border-color: var(--card-border);
     --date-text-color: var(--card-date-text);
@@ -135,7 +130,6 @@
     --logo-text-color: var(--card-logo-text);
     --price-text-color: var(--price-text);
     --promo-text-color: var(--promo-text);
-    --timer-bg-color: var(--timer-background);
     --digit-bg-color: var(--timer-digit-top-block);
     --digit-back-color: var(--timer-digit-bottom-block);
     --digit-color: var(--timer-digit-text);
@@ -143,182 +137,148 @@
     --label-color: var(--timer-label-text);
     
     /* ======= БАЗОВЫЕ ЦВЕТА ======= */
-    --color-dark-teal: #1E2A4A;      /* Тёмно-синий для текста - более синеватый */
-    --color-light-green: #90ffa0;    /* Яркий зеленый для фона */
-    --color-bright-green: #1B2A41;   /* Тёмно-синий для нижнего прямоугольника (более тусклый и холодный) */
-    --color-magenta: #FF59C8;        /* Фиолетовый для акцентов */
-    --color-turquoise: #90ffa0;      /* Яркий зеленый для фона таймера */
-    --color-purple: #FF59C8;         /* Фиолетовый для элементов */
+    --color-dark-teal: #1E2A4A;
+    --color-light-green: #90ffa0;
+    --color-bright-green: #1B2A41;
+    --color-magenta: #FF59C8;
+    --color-purple: #FF59C8;
     
-    /* Дополнительные цвета для градиентов и анимаций */
-    --color-magenta-light: #FF59C8;  /* Светлый фиолетовый для градиентов */
-    --color-magenta-dark: #FF59C8;   /* Тёмный фиолетовый для градиентов */
+    --color-magenta-light: #FF59C8;
+    --color-magenta-dark: #FF59C8;
     
     /* ======= НАСТРОЙКИ ШАПКИ И ОБЩИЕ ======= */
-    --body-bg-color: var(--color-white);  /* Фон страницы */
-    --body-padding-top: 2rem;             /* Отступ шапки от верха */
-    --body-padding-sides: 1.5rem;         /* Боковые отступы */
+    --body-bg-color: var(--color-white);
+    --body-padding-top: 2rem;
+    --body-padding-sides: 1.5rem;
     
     /* ======= ШРИФТЫ ======= */
-    --base-font-size: 16px;               /* Базовый размер шрифта */
-    --font-primary: 'Roboto Condensed', sans-serif;  /* Основной шрифт */
-    --font-logo: 'Alata', sans-serif;     /* Шрифт для логотипа Faberlic */
+    --base-font-size: 16px;
+    --font-primary: 'Roboto Condensed', sans-serif;
+    --font-logo: 'Alata', sans-serif;
     
     /* ======= ЖИРНОСТЬ ШРИФТА ======= */
-    /* Доступные значения жирности для Roboto Condensed: 
-       100 (Thin) - самый тонкий
-       200 (ExtraLight) - очень тонкий
-       300 (Light) - светлый
-       400 (Regular) - обычный (стандартный)
-       500 (Medium) - средний
-       600 (SemiBold) - полужирный
-       700 (Bold) - жирный
-       800 (ExtraBold) - очень жирный
-       900 (Black) - сверхжирный
-    */
-    --font-weight-thin: 100;              /* Самый тонкий шрифт (Thin) */
-    --font-weight-light: 300;             /* Светлый шрифт (Light) */
-    --font-weight-normal: 400;            /* Обычная жирность (Regular) */
-    --font-weight-medium: 500;            /* Средняя жирность (Medium) */
-    --font-weight-semibold: 600;          /* Полужирный шрифт (SemiBold) */
-    --font-weight-bold: 700;              /* Жирный шрифт (Bold) */
-    --font-weight-black: 900;             /* Сверхжирный шрифт (Black) */
+    --font-weight-thin: 100;
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-black: 900;
     
     /* ======= КОНТЕЙНЕР ======= */
-    --container-desktop-width: 60%;       /* Ширина контейнера на десктопе */
-    --container-1200-width: 70%;          /* Ширина при 1024-1200px - было 65%, стало 70% */
-    --container-1024-width: 80%;          /* Ширина при 900-1024px - было 70%, стало 80% */
-    --container-900-width: 85%;           /* Ширина при 768-900px - было 75%, стало 85% */
-    --container-768-width: 90%;           /* Ширина при 600-768px - было 80%, стало 90% */
-    --container-600-width: 95%;           /* Ширина при 480-600px - было 90%, стало 95% */
-    --container-mobile-width: 100%;       /* Ширина на мобильных (<480px) */
-    --container-max-width: 1400px;        /* Максимальная ширина контейнера */
+    --container-desktop-width: 60%;
+    --container-1200-width: 70%;
+    --container-1024-width: 80%;
+    --container-900-width: 85%;
+    --container-768-width: 90%;
+    --container-600-width: 95%;
+    --container-mobile-width: 100%;
+    --container-max-width: 1400px;
     
     /* ======= ЗЕЛЕНАЯ КАРТОЧКА ======= */
-    --card-border-width: 2px;                     /* Толщина рамки */
-    --card-border-radius: 0.5rem;                 /* Скругление углов */
-    --card-min-height: 120px;                     /* Мин. высота карточки */
-    --card-min-height-tablet: 100px;              /* Мин. высота на планшетах */
-    --card-padding: 1.5rem;                       /* Отступы внутри карточки */
-    --card-padding-top: calc(1.5rem + 2rem);      /* Верхний отступ для помещения даты и логотипа */
-    --card-padding-tablet: 1rem;                  /* Отступы на планшете */
-    --card-padding-top-tablet: calc(1rem + 2rem); /* Верхний отступ на планшете */
+    --card-border-width: 2px;
+    --card-border-radius: 0.5rem;
+    --card-min-height: 120px;
+    --card-min-height-tablet: 100px;
+    --card-padding: 1.5rem;
+    --card-padding-top: calc(1.5rem + 2rem);
+    --card-padding-tablet: 1rem;
+    --card-padding-top-tablet: calc(1rem + 2rem);
     
-    /* ======= АКЦИОННАЯ ДАТА (До 20 апреля) ======= */
-    --date-font-size: 1.2rem;                     /* Размер шрифта даты */
-    --date-font-weight: var(--font-weight-normal); /* Жирность шрифта даты */
-    --date-position-top: 1rem;                    /* Отступ сверху */
-    --date-position-left: 1.5rem;                 /* Отступ слева */
-    --date-max-width: 45%;                        /* Макс. ширина текста */
-    --date-line-height: 1.2;                      /* Высота строки */
+    /* ======= АКЦИОННАЯ ДАТА ======= */
+    --date-font-size: 1.2rem;
+    --date-font-weight: var(--font-weight-normal);
+    --date-position-top: 1rem;
+    --date-position-left: 1.5rem;
+    --date-max-width: 45%;
+    --date-line-height: 1.2;
     
     /* ======= ЛОГОТИП FABERLIC ======= */
-    --logo-font-size: 1.5rem;                     /* Размер шрифта логотипа */
-    --logo-font-weight: normal;                   /* Жирность шрифта логотипа */
-    --logo-position-top: 0.7rem;                  /* Отступ сверху */
-    --logo-position-right: 1.5rem;                /* Отступ справа */
-    --logo-max-width: 45%;                        /* Макс. ширина */
-    --logo-line-height: 1.2;                      /* Высота строки */
+    --logo-font-size: 1.5rem;
+    --logo-font-weight: normal;
+    --logo-position-top: 0.7rem;
+    --logo-position-right: 1.5rem;
+    --logo-max-width: 45%;
+    --logo-line-height: 1.2;
     
     /* ======= ОСНОВНОЙ ТЕКСТ ПРЕДЛОЖЕНИЯ ======= */
-    --offer-font-size: 1.5rem;                    /* Размер шрифта */
-    --offer-font-size-tablet: 1rem;               /* Размер на планшете */
-    --offer-font-weight: var(--font-weight-normal); /* Жирность шрифта предложения */
-    --offer-max-width: 60%;                       /* Макс. ширина */
-    --offer-max-width-tablet: 55%;                /* Макс. ширина на планшете */
-    --offer-margin-right: 1rem;                   /* Отступ справа (увеличен с 0.5rem) */
+    --offer-font-size: 1.5rem;
+    --offer-font-size-tablet: 1rem;
+    --offer-font-weight: var(--font-weight-normal);
+    --offer-max-width: 60%;
+    --offer-max-width-tablet: 55%;
+    --offer-margin-right: 1rem;
     
     /* ======= ЦЕНА ======= */
-    --price-font-size: 1.7rem;                    /* Размер шрифта цены */
-    --price-font-size-tablet: 1.2rem;             /* Размер на планшете */
-    --price-font-weight: var(--font-weight-light); /* Жирность шрифта цены */
-    --price-padding-x: 0.3rem;                    /* Горизонтальный отступ - увеличиваем для лучшего вида */
-    --price-padding-y: 0.2rem;                    /* Вертикальный отступ - увеличиваем для лучшего вида */
-    --price-border-radius: 0.5rem;                /* Скругление углов - увеличиваем для более современного вида */
-    --price-letter-spacing: 0.5px;                /* Межбуквенный интервал */
+    --price-font-size: 1.7rem;
+    --price-font-size-tablet: 1.2rem;
+    --price-font-weight: var(--font-weight-light);
+    --price-padding-x: 0.3rem;
+    --price-padding-y: 0.2rem;
+    --price-border-radius: 0.5rem;
+    --price-letter-spacing: 0.5px;
     
     /* ======= ПОЛОСКА "АКЦИЯ" ======= */
-    --promo-font-size: 1.3rem;                    /* Размер шрифта */
-    --promo-font-weight: var(--font-weight-normal); /* Жирность шрифта акции */
-    --promo-padding: 0.75rem;                     /* Внутренний отступ */
-    --promo-border-radius: 0.5rem;                /* Скругление углов */
-    --promo-margin-bottom: 0.5rem;                /* Отступ снизу */
-    --promo-line-height: 1.5;                     /* Высота строки */
+    --promo-font-size: 1.3rem;
+    --promo-font-weight: var(--font-weight-normal);
+    --promo-padding: 0.75rem;
+    --promo-border-radius: 0.5rem;
+    --promo-margin-bottom: 0.5rem;
+    --promo-line-height: 1.5;
     
     /* =============================================
-       ======== НАСТРОЙКИ ТАЙМЕРА ================
+       ======== НАСТРОЙКИ ТАЙМЕРА (СУПЕР МАЛЕНЬКИЕ) ================
        =============================================*/
     
-    /* ======= ТАЙМЕР: ОСНОВНОЙ КОНТЕЙНЕР ======= */
-    --timer-border-radius: 1.25rem;              /* Скругление углов таймера */
-    --timer-margin: 0 auto;                      /* Отступы для центрирования */
-    --timer-margin-top: 1rem;                    /* Верхний отступ таймера */
+    --timer-margin-top-inside-product: 0.6rem; 
+    --timer-padding-internal: 0.15rem 0; 
+        
+    /* Обновляем размеры для заголовка, который теперь используется для "Пишите прямо сейчас!" */
+    --timer-header-font-size: 1.5rem; /* Как в .product-item (было 0.5rem) */
+    --timer-header-font-size-tablet: 1.2rem; /* Пропорционально (было 0.45rem) */
+    --timer-header-font-size-mobile: 1.2rem; /* Пропорционально (было 0.4rem) */
+    --timer-header-margin-bottom: 1.1rem; /* Немного увеличим отступ снизу (было 0.3rem) */
+    --timer-header-margin-mobile: 0.8rem; /* (было 0.25rem) */
+    --timer-header-font-style: italic; /* Оставляем курсив или меняем на normal, если нужно */
+    --timer-header-font-weight: var(--font-weight-normal); /* Оставляем normal или меняем, если нужно */
     
-    /* Отступы внутри таймера */
-    --timer-padding-desktop: 1.5rem 1.5rem 2rem;   /* Отступы на десктопе */
-    --timer-padding-tablet: 1.2rem 1.2rem 1.8rem;  /* Отступы на планшете */
-    --timer-padding-small: 1rem 1rem 1.5rem;       /* Отступы на маленьких экранах */
-    --timer-padding-mobile: 0.8rem 0.8rem 1.2rem;  /* Отступы на мобильных */
+    /* Остальные переменные таймера остаются для цифр счетчика, если он еще используется где-то с таким же стилем цифр, */
+    /* Либо их можно будет переименовать/удалить, если стиль цифр счетчика просмотров будет полностью отдельным */
+    --timer-blocks-gap: 0.15rem; 
+    --timer-blocks-gap-tablet: 0.12rem; 
+    --timer-blocks-gap-mobile: 0.1rem; 
     
-    /* ======= ТАЙМЕР: ЗАГОЛОВОК ======= */
-    --timer-header-font-size: 1.5rem;             /* Размер шрифта заголовка */
-    --timer-header-font-size-tablet: calc(var(--timer-header-font-size) * 0.9);  /* Размер на планшете */
-    --timer-header-font-size-mobile: calc(var(--timer-header-font-size) * 0.85); /* Размер на мобильном */
-    --timer-header-margin-bottom: 1.25rem;        /* Отступ снизу */
-    --timer-header-margin-mobile: calc(var(--timer-header-margin-bottom) * 0.8); /* Отступ на мобильном */
-    --timer-header-font-style: italic;            /* Стиль шрифта (курсив, нормальный) */
-    --timer-header-font-weight: var(--font-weight-normal); /* Жирность */
+    --digit-width: 0.9rem; 
+    --digit-height: 1.1rem; 
+    --digit-width-tablet: 0.8rem; 
+    --digit-height-tablet: 1.0rem; 
+    --digit-width-small: 0.7rem; 
+    --digit-height-small: 0.9rem; 
+    --digit-width-mobile: 0.6rem; 
+    --digit-height-mobile: 0.8rem; 
     
-    /* ======= ТАЙМЕР: БЛОКИ И РАСПОЛОЖЕНИЕ ======= */
-    --timer-blocks-gap: var(--timer-gap, 1rem);           /* Отступ между блоками дни/часы/минуты/секунды */
-    --timer-blocks-gap-tablet: 0.8rem;            /* Отступ на планшете */
-    --timer-blocks-gap-mobile: 0.6rem;            /* Отступ на мобильном */
-    --timer-digit-gap: 0.5rem;                    /* Отступ между цифрами внутри блока */
-    --timer-digit-gap-tablet: 0.3rem;             /* Отступ между цифрами на планшете */
-    --timer-digit-gap-mobile: 0.2rem;             /* Отступ между цифрами на мобильном */
-    --timer-digit-gap-xs: 0.15rem;                /* Отступ между цифрами на очень маленьких экранах */
+    --digit-font-size: 0.55rem; 
+    --digit-font-size-tablet: 0.45rem; 
+    --digit-font-size-small: 0.4rem; 
+    --digit-font-size-mobile: 0.35rem; 
+    --digit-font-weight: var(--font-weight-bold);
     
-    /* Сетка 2х2 для маленьких экранов */
-    --timer-grid-width: 95%;                      /* Увеличиваем с 90% до 95% */
-    --timer-grid-width-mobile: 98%;               /* Увеличиваем с 95% до 98% */
+    --digit-border-radius: 0.2rem; 
+    --digit-offset: 0.05rem; 
     
-    /* Размеры цифровых блоков */
-    --digit-width: 3.5rem;                        /* Ширина блока цифры */
-    --digit-height: 4.2rem;                       /* Высота блока цифры */
-    --digit-width-tablet: 2.6rem;                 /* Ширина на планшете */
-    --digit-height-tablet: 3.4rem;                /* Высота на планшете */
-    --digit-width-small: calc(var(--digit-width-tablet) * 0.85); /* Ширина на маленьких экранах */
-    --digit-height-small: calc(var(--digit-height-tablet) * 0.85); /* Высота на маленьких экранах */
-    --digit-width-mobile: 2.2rem;                 /* Ширина на мобильном */
-    --digit-height-mobile: 2.8rem;                /* Высота на мобильном */
+    --separator-font-size: 0.5rem; 
+    --separator-font-size-tablet: 0.45rem; 
+    --separator-font-size-small: 0.4rem; 
+    --separator-font-size-mobile: 0.35rem; 
     
-    /* Шрифт цифр */
-    --digit-font-size: 2.2rem;                    /* Размер шрифта цифр */
-    --digit-font-size-tablet: calc(var(--digit-font-size) * 0.85); /* Размер на планшете */
-    --digit-font-size-small: calc(var(--digit-font-size) * 0.7);   /* Размер на маленьких экранах */
-    --digit-font-size-mobile: calc(var(--digit-font-size) * 0.55); /* Размер на мобильном */
-    --digit-font-weight: var(--font-weight-bold); /* Жирность шрифта цифр */
+    --separator-offset: 0.05rem; 
+    --separator-offset-tablet: 0.02rem; 
     
-    /* Стиль цифровых блоков */
-    --digit-border-radius: 0.7rem;                /* Скругление углов цифровых блоков */
-    --digit-offset: 0.3rem;                       /* Смещение верхнего прямоугольника от нижнего для 3D-эффекта */
-    
-    /* Размер двоеточий на разных устройствах */
-    --separator-font-size: 1.8rem;                /* Размер двоеточий на десктопе */
-    --separator-font-size-tablet: 1.6rem;         /* Размер на планшете */
-    --separator-font-size-small: 1.4rem;          /* Размер на маленьких экранах */
-    --separator-font-size-mobile: 1.2rem;         /* Размер на мобильных */
-    
-    /* Позиционирование двоеточий */
-    --separator-offset: 0.3rem;                   /* Горизонтальное смещение от края */
-    --separator-offset-tablet: 0.2rem;            /* Смещение на планшете */
-    
-    /* ======= ТАЙМЕР: ПОДПИСИ (ДНИ, ЧАСЫ и т.д.) ======= */
-    --label-font-size: 1rem;                      /* Размер шрифта подписей */
-    --label-font-size-tablet: 0.9rem;             /* Размер на планшете */
-    --label-font-size-mobile: 0.75rem;            /* Размер на мобильных */
-    --label-margin-top: 0.5rem;                   /* Отступ сверху */
-    --label-font-weight: var(--font-weight-normal); /* Жирность подписей */
+    --label-font-size: 0.35rem; 
+    --label-font-size-tablet: 0.3rem; 
+    --label-font-size-mobile: 0.28rem; 
+    --label-margin-top: 0.1rem; 
+    --label-font-weight: var(--font-weight-normal);
 
     /* ======= СЕТКА ТЕТРАДИ ======= */
     --grid-color: rgba(89, 77, 196, 0.7);    /* Цвет линий сетки #594DC4 с прозрачностью 70% */
@@ -578,30 +538,29 @@ body {
     flex-direction: column;
     align-items: center;
     position: relative;
-    background-color: var(--timer-bg-color);
-    border-radius: var(--card-border-radius);
-    border: var(--card-border-width) solid var(--card-border-color);
-    padding: var(--timer-padding-desktop);
+    /* Удалены: background-color, border, border-radius, box-shadow */
+    padding: var(--timer-padding-internal); /* Используем новую переменную для внутренних отступов */
     text-align: center;
-    margin: 0 auto; /* Центрирование по горизонтали */
-    margin-bottom: 0.5rem; /* Вдвое уменьшенный отступ между блоками */
+    margin: 0 auto; /* Для центрирования содержимого, если ширина ограничена */
+    margin-top: var(--timer-margin-top-inside-product); /* Отступ сверху внутри .product-info */
+    /* margin-bottom: 0.5rem; УДАЛЕНО, теперь он не самостоятельный блок */
     width: 100%;
-    overflow: hidden;
+    overflow: hidden; /* Оставляем на случай, если что-то вылезет */
     box-sizing: border-box;
 }
 
 .timer-header {
-    font-size: var(--timer-header-font-size);
+    font-size: var(--timer-header-font-size); /* Используем обновленную переменную */
     color: var(--timer-header-text);
     font-weight: var(--timer-header-font-weight);
-    margin-bottom: var(--timer-header-margin-bottom);
+    margin-bottom: var(--timer-header-margin-bottom); /* Используем обновленную переменную */
     text-align: center;
 }
 
 .timer-blocks {
     display: flex;
-    justify-content: center;
-    gap: 1.5rem; /* Увеличиваем отступ между блоками (было var(--timer-blocks-gap)) */
+    justify-content: center; /* Выравнивание блоков по центру */
+    gap: var(--timer-blocks-gap); /* Используем обновленную переменную */
     margin: 0;
     padding: 0;
     flex-wrap: nowrap; /* Гарантируем отсутствие переноса */
@@ -624,18 +583,19 @@ body {
 .timer-block:not(:last-child)::after {
     content: ":";
     position: absolute;
-    right: calc(-1 * 1.5rem / 2 - var(--separator-offset)); /* Обновляем позицию с учетом нового отступа */
-    top: calc(var(--digit-height) / 2 - 0.8rem);
+    /* Обновляем позицию с учетом нового уменьшенного gap и размеров */
+    right: calc(-1 * var(--timer-blocks-gap) / 2 - var(--separator-offset)); 
+    top: calc(var(--digit-height) / 2 - var(--separator-font-size) / 2 + 0.1rem); /* Центрирование по вертикали */
     font-size: var(--separator-font-size);
-    font-weight: var(--separator-font-weight);
+    font-weight: var(--separator-font-weight); /* такой переменной нет, можно добавить var(--font-weight-bold) или убрать */
     color: var(--separator-color);
 }
 
 .timer-unit {
     display: flex;
-    gap: 0; /* Убираем отступ между цифрами в одной группе */
+    gap: 0; /* Убираем отступ между цифрами в одной группе, если он был тут */
     background-color: transparent;
-    padding: 0.2rem;
+    padding: 0.1rem; /* Уменьшаем padding если был большим (было 0.2rem) */
     border-radius: var(--digit-border-radius);
     position: relative;
     box-shadow: none; /* Убираем тень */
@@ -650,7 +610,7 @@ body {
     width: 100%;
     height: 100%;
     background-color: var(--digit-back-color); /* Цвет нижнего блока */
-    border-radius: var(--digit-border-radius);
+    border-radius: var(--digit-border-radius); /* Используем обновленную переменную */
     z-index: 0;
     border: none;
 }
@@ -664,28 +624,28 @@ body {
     width: 100%;
     height: 100%;
     background-color: var(--digit-bg-color); /* Цвет верхнего блока */
-    border-radius: var(--digit-border-radius);
+    border-radius: var(--digit-border-radius); /* Используем обновленную переменную */
     z-index: 1;
-    transform: translate(calc(-1 * var(--digit-offset)), calc(-1 * var(--digit-offset))); /* Смещаем верхний блок влево и вверх */
+    transform: translate(calc(-1 * var(--digit-offset)), calc(-1 * var(--digit-offset))); /* Используем обновленную переменную */
 }
 
 .timer-label {
-    font-size: var(--label-font-size);
+    font-size: var(--label-font-size); /* Используем обновленную переменную */
     color: var(--label-color);
     font-weight: var(--label-font-weight);
-    margin-top: var(--label-margin-top);
+    margin-top: var(--label-margin-top); /* Используем обновленную переменную */
     text-align: center;
 }
 
 .timer-digit {
     position: relative;
-    width: var(--digit-width);
-    height: var(--digit-height);
+    width: var(--digit-width); /* Используем обновленную переменную */
+    height: var(--digit-height); /* Используем обновленную переменную */
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 2; /* Увеличиваем z-index, чтобы цифры были видны поверх фона */
-    transform: translate(calc(-1 * var(--digit-offset)), calc(-1 * var(--digit-offset))); /* Смещаем цифры вместе с верхним блоком */
+    z-index: 2;
+    transform: translate(calc(-1 * var(--digit-offset)), calc(-1 * var(--digit-offset))); /* Используем обновленную переменную */
 }
 
 /* Добавляем пунктирную линию между цифрами */
@@ -766,178 +726,101 @@ body {
 
 @media (max-width: 768px) {
     .timer-blocks {
-        gap: 1.2rem; /* Увеличенный отступ для планшетов */
+        gap: var(--timer-blocks-gap-tablet); /* Используем обновленную переменную */
     }
     
     .timer-block:not(:last-child)::after {
-        right: calc(-1 * 1.2rem / 2 - 0.2rem);
-        top: calc(var(--digit-height-tablet) / 2 - 0.7rem);
+        right: calc(-1 * var(--timer-blocks-gap-tablet) / 2 - var(--separator-offset-tablet));
+        top: calc(var(--digit-height-tablet) / 2 - var(--separator-font-size-tablet) / 2 + 0.1rem); /* Центрирование */
         font-size: var(--separator-font-size-tablet);
     }
     
-    /* Здесь были удалены старые стили */
-}
-
-@media (max-width: 600px) {
-    .timer-blocks {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, auto);
-        gap: 0.7rem; /* Уменьшаем горизонтальный отступ с 1rem */
-        grid-row-gap: 2.75rem;
-        justify-items: center;
-        width: var(--timer-grid-width-mobile);
-        margin: 0 auto;
-        padding: 0; /* Убираем внутренние отступы */
+    .timer-unit {
+        padding: 0.08rem; /* было 0.15rem */
     }
-    
-    /* Также уменьшаем отступ у заголовка таймера */
     .timer-header {
-        margin-bottom: 1.5rem; /* Уменьшаем с 2.5rem */
+        font-size: var(--timer-header-font-size-tablet);
     }
-    
-    /* Здесь были удалены старые стили */
-    
-    /* Скрываем стандартные разделители при перегруппировке в сетку 2×2 */
-    .timer-block:not(:last-child)::after {
-        content: "";
-        display: none;
-    }
-
-    /* Улучшаем отображение подписей, чтобы они не перекрывались */
     .timer-label {
-        font-size: 0.75rem;
-        margin-top: 0.3rem;
-        position: relative;
-        z-index: 5; /* Повышаем z-index для надписей */
-    }
-    
-    /* Добавляем фон для подписей, чтобы они не перекрывались с цифрами */
-    .timer-label::before {
-        content: "";
-        position: absolute;
-        top: -0.15rem;
-        left: -0.5rem;
-        right: -0.5rem;
-        bottom: -0.15rem;
-        background-color: var(--timer-bg-color);
-        z-index: -1;
-        border-radius: 0.3rem;
-    }
-}
-
-@media (max-width: 480px) {
-    /* Здесь были удалены старые стили */
-    
-    /* Остальные стили не меняем */
-}
-
-/* Медиа-запрос для 700px */
-@media (max-width: 700px) {
-    .timer-digit {
-        width: calc(var(--digit-width-tablet) + 0.2rem);
-        height: calc(var(--digit-height-tablet) + 0.2rem);
-    }
-    
-    .timer-digit span {
-        font-size: calc(var(--digit-font-size-tablet) + 0.1rem);
-    }
-    
-    /* Здесь были удалены старые стили */
-}
-
-/* Убираем фоны для отдельных цифр, так как теперь фон общий */
-.timer-digit-front, .timer-digit-back {
-    display: none;
-}
-
-.timer-digit span {
-    font-size: var(--digit-font-size);
-    color: var(--digit-color);
-    font-weight: var(--digit-font-weight);
-    position: relative;
-    z-index: 3;
-    width: 1em; /* Фиксированная ширина для каждой цифры */
-    text-align: center;
-    line-height: 1; /* Предотвращает дергание по вертикали */
-}
-
-/* Медиа-запросы для адаптации разделителей на разных устройствах */
-@media (max-width: 768px) {
-    .timer-blocks {
-        gap: 1.2rem; /* Увеличенный отступ для планшетов (было var(--timer-blocks-gap-tablet)) */
-    }
-    
-    .timer-block:not(:last-child)::after {
-        right: calc(-1 * 1.2rem / 2 - 0.2rem); /* Обновляем позицию с учетом нового отступа */
-        top: calc(var(--digit-height-tablet) / 2 - 0.7rem);
-        font-size: var(--separator-font-size-tablet);
-    }
-    
-    .timer-unit {
-        padding: 0.15rem;
+        font-size: var(--label-font-size-tablet);
     }
 }
 
 @media (max-width: 600px) {
     .timer-blocks {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, auto);
-        gap: 1rem; /* Увеличенный отступ для мобильных (было var(--timer-blocks-gap-mobile)) */
-        justify-items: center;
-        width: var(--timer-grid-width-mobile);
+        /* УБИРАЕМ GRID, ДЕЛАЕМ FLEX ДЛЯ ОДНОЙ СТРОКИ */
+        display: flex; 
+        flex-wrap: nowrap; 
+        justify-content: center; /* или space-around/space-between по вкусу */
+        gap: var(--timer-blocks-gap-mobile); /* Новый уменьшенный gap для мобильных */
+        /* Удалены: grid-template-columns, grid-template-rows, grid-row-gap, justify-items */
+        width: 100%; /* Занимает всю доступную ширину */
         margin: 0 auto;
+        padding: 0;
     }
     
-    .countdown-timer {
-        padding: var(--timer-padding-small);
+    .timer-header {
+        margin-bottom: var(--timer-header-margin-mobile); /* Уменьшаем с 2.5rem */
+        font-size: var(--timer-header-font-size-mobile);
     }
-    
-    /* Добавляем разделитель между днями и часами (первый и второй блоки) */
-    .timer-block:first-child::after {
-        content: ":";
-        display: block;
-        position: absolute;
-        right: -50%; /* Смещаем на половину расстояния между ячейками */
-        top: 50%; /* Размещаем по вертикальному центру */
-        transform: translate(50%, -50%); /* Центрируем по обеим осям */
-        font-size: var(--separator-font-size-mobile);
-        font-weight: var(--separator-font-weight);
-        color: var(--separator-color);
-    }
-    
-    /* Добавляем разделитель между минутами и секундами (третий и четвертый блоки) */
-    .timer-block:nth-child(3)::after {
-        content: ":";
-        display: block;
-        position: absolute;
-        right: -50%; /* Смещаем на половину расстояния между ячейками */
-        top: 50%; /* Размещаем по вертикальному центру */
-        transform: translate(50%, -50%); /* Центрируем по обеим осям */
-        font-size: var(--separator-font-size-mobile);
-        font-weight: var(--separator-font-weight);
-        color: var(--separator-color);
-    }
-    
-    /* Настройки для мобильного размера ячеек */
-    .timer-digit {
-        width: var(--digit-width-small);
-        height: var(--digit-height-small);
-    }
-    
-    .timer-digit span {
-        font-size: var(--digit-font-size-mobile);
-    }
-    
-    /* Скрываем стандартные разделители при перегруппировке в сетку 2×2 */
+        
+    /* Скрываем стандартные разделители при перегруппировке в сетку 2×2 - ЭТО ПРАВИЛО БОЛЬШЕ НЕ НУЖНО ИЛИ НУЖНО ИЗМЕНИТЬ */
+    /* Если мы всегда в одну строку, то двоеточия всегда нужны */
     .timer-block:not(:last-child)::after {
-        content: "";
-        display: none;
+        /* display: block; Убедимся, что они видны */
+        right: calc(-1 * var(--timer-blocks-gap-mobile) / 2 - var(--separator-offset-tablet)); /* Адаптируем отступ */
+        top: calc(var(--digit-height-small) / 2 - var(--separator-font-size-small) / 2 + 0.1rem); /* Адаптируем top */
+        font-size: var(--separator-font-size-small); /* Адаптируем размер */
+    }
+
+    /* Удаляем стили для разделителей, специфичных для сетки 2x2 */
+    .timer-block:first-child::after, 
+    .timer-block:nth-child(3)::after {
+        content: ":"; /* Восстанавливаем, если было убрано */
+        /* display: block; было */ 
+        /* Если эти правила были для сетки, а теперь всегда flex, то они не нужны в таком виде */
+        /* Вместо этого, общее правило .timer-block:not(:last-child)::after должно работать */
+    }
+    /* Если селекторы выше были для добавления двоеточий в сетке, то их нужно удалить или пересмотреть */
+    /* Оставляем только стандартный разделитель */
+    .timer-block:first-child::after {
+        /* Если это был специальный разделитель для грида, убираем его */
+        /* content: none; */ 
+        /* display: none; */
+    }
+    .timer-block:nth-child(3)::after {
+        /* content: none; */
+        /* display: none; */
+    }
+
+
+    /* Улучшаем отображение подписей, чтобы они не перекрывались - эти стили для фона подписей можно убрать, если они не нужны */
+    .timer-label {
+        font-size: var(--label-font-size-mobile);
+        margin-top: 0.2rem; /* было 0.3rem */
+        /* position: relative; */ /* Можно убрать, если нет фона */
+        /* z-index: 5; */
     }
     
+    .timer-label::before {
+        /* content: ""; */ /* Убираем фон для подписей, если он не нужен */
+        /* position: absolute; */
+        /* top: -0.15rem; */
+        /* left: -0.5rem; */
+        /* right: -0.5rem; */
+        /* bottom: -0.15rem; */
+        /* background-color: var(--timer-bg-color); /* --timer-bg-color УДАЛЕНА */
+        /* z-index: -1; */
+        /* border-radius: 0.3rem; */
+        display: none; /* Скрываем этот псевдоэлемент */
+    }
+
+    .countdown-timer {
+        padding: var(--timer-padding-internal); /* было var(--timer-padding-small) */
+    }
+
     .timer-unit {
-        padding: 0.12rem;
+        padding: 0.05rem; /* было 0.12rem */
     }
 }
 
@@ -984,21 +867,22 @@ body {
         padding: 0.15rem 0.3rem;
     }
     
-    /* Адаптация сетки 2×2 для маленьких экранов */
+    /* Адаптация сетки 2×2 для маленьких экранов - МЕНЯЕМ НА FLEX */
     .timer-blocks {
-        gap: var(--timer-digit-gap-xs);
-        width: var(--timer-grid-width-mobile);
+        gap: var(--timer-blocks-gap-mobile); /* было var(--timer-digit-gap-xs) */
+        /* width: var(--timer-grid-width-mobile); УДАЛЕНО */
+        justify-content: center; /* или space-around */
     }
     
     .countdown-timer {
-        padding: var(--timer-padding-mobile);
+        padding: var(--timer-padding-internal); /* было var(--timer-padding-mobile) */
     }
     
     /* Подправляем разделители для маленьких экранов */
-    .timer-block:first-child::after,
-    .timer-block:nth-child(3)::after {
+    .timer-block:not(:last-child)::after {
         font-size: var(--separator-font-size-mobile);
-        /* Сохраняем центрирование, меняя только размер шрифта */
+        right: calc(-1 * var(--timer-blocks-gap-mobile) / 2 - var(--separator-offset-tablet));
+        top: calc(var(--digit-height-mobile) / 2 - var(--separator-font-size-mobile) / 2 + 0.05rem);
     }
     
     /* Максимально уменьшаем размер ячеек */
@@ -1021,7 +905,7 @@ body {
     }
     
     .timer-unit {
-        gap: var(--timer-digit-gap-mobile);
+        gap: 0; /* было var(--timer-digit-gap-mobile) */
     }
 }
 
@@ -1152,6 +1036,7 @@ body {
     .product-info {
         padding: 0;
         overflow: hidden;
+        padding-bottom: 1rem; /* Добавляем отступ снизу для таймера */
     }
 }
 
@@ -1211,28 +1096,15 @@ body {
         padding: 0.15rem 0.3rem;
     }
     
-    /* Адаптация сетки 2×2 для маленьких экранов */
-    .timer-blocks {
-        gap: var(--timer-digit-gap-xs);
-        width: var(--timer-grid-width-mobile);
-    }
+    /* Адаптация сетки 2×2 для маленьких экранов - УЖЕ ИЗМЕНЕНО НА FLEX */
     
     .countdown-timer {
-        padding: var(--timer-padding-mobile);
+        padding: var(--timer-padding-internal);
     }
     
     /* Подправляем разделители для маленьких экранов */
-    .timer-block:first-child::after,
-    .timer-block:nth-child(3)::after {
-        font-size: var(--separator-font-size-mobile);
-        /* Сохраняем центрирование, меняя только размер шрифта */
-    }
     
     /* Максимально уменьшаем размер ячеек */
-    .timer-digit {
-        width: var(--digit-width-mobile);
-        height: var(--digit-height-mobile);
-    }
     
     .timer-digit span {
         font-size: var(--digit-font-size-mobile);
@@ -1366,6 +1238,7 @@ body {
         justify-items: center;
         width: var(--timer-grid-width-mobile);
         margin: 0 auto;
+        padding: 0; /* Убираем внутренние отступы */
     }
     
     /* Также уменьшаем отступ у заголовка таймера */
