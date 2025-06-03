@@ -148,7 +148,7 @@
     
     /* ======= НАСТРОЙКИ ШАПКИ И ОБЩИЕ ======= */
     --body-bg-color: var(--color-white);
-    --body-padding-top: 2rem;
+    --body-padding-top: 0.2rem;
     --body-padding-sides: 1.5rem;
     
     /* ======= ШРИФТЫ ======= */
@@ -219,7 +219,7 @@
     --price-letter-spacing: 0.5px;
     
     /* ======= ПОЛОСКА "АКЦИЯ" ======= */
-    --promo-font-size: 1.3rem;
+    --promo-font-size: 1rem;
     --promo-font-weight: var(--font-weight-normal);
     --promo-padding: 0.75rem;
     --promo-border-radius: 0.5rem;
@@ -511,11 +511,18 @@ body {
     );
     background-size: 300% 100%;
     animation: gradientMove 20s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
-    padding: var(--promo-padding);
+    padding: 0; /* Remove padding from promo-bar itself */
     margin-bottom: 0.5rem; /* Вдвое уменьшенный отступ между блоками */
     border-radius: var(--promo-border-radius);
     overflow: hidden;
     white-space: nowrap;
+    display: block; /* Ensure it behaves like a block for the link */
+}
+
+.promo-link {
+    display: block;
+    padding: var(--promo-padding); /* Apply padding to the link instead */
+    text-decoration: none;
 }
 
 /* ТЕКСТ: "Акция" - бегущая строка */
@@ -526,10 +533,20 @@ body {
     font-family: var(--font-primary);
     font-style: italic;
     line-height: var(--promo-line-height);
-    display: block;
+    display: flex; /* Changed to flex for icon alignment */
+    align-items: center; /* Vertically align icon and text */
+    justify-content: center; /* Horizontally center icon and text */
     text-align: center;
-    white-space: nowrap;
+    white-space: nowrap; /* Keep as nowrap if single line is desired */
     overflow: hidden;
+}
+
+.promo-icon {
+    width: 1.2em; /* Adjust size as needed, relative to font size */
+    height: 1.2em; /* Adjust size as needed, relative to font size */
+    margin-right: 0.5em; /* Space between icon and text */
+    filter: brightness(0) invert(1); /* Make icon white */
+    vertical-align: middle; /* Helps with alignment if not using flex */
 }
 
 /* Контейнер таймера */
@@ -768,7 +785,7 @@ body {
     /* Если мы всегда в одну строку, то двоеточия всегда нужны */
     .timer-block:not(:last-child)::after {
         /* display: block; Убедимся, что они видны */
-        right: calc(-1 * var(--timer-blocks-gap-mobile) / 2 - var(--separator-offset-tablet)); /* Адаптируем отступ */
+        right: calc(-1 * var(--timer-blocks-gap-mobile) / 2 - var(--separator-offset));
         top: calc(var(--digit-height-small) / 2 - var(--separator-font-size-small) / 2 + 0.1rem); /* Адаптируем top */
         font-size: var(--separator-font-size-small); /* Адаптируем размер */
     }
@@ -869,7 +886,7 @@ body {
     
     /* Адаптация сетки 2×2 для маленьких экранов - МЕНЯЕМ НА FLEX */
     .timer-blocks {
-        gap: var(--timer-blocks-gap-mobile); /* было var(--timer-digit-gap-xs) */
+        gap: var(--timer-blocks-gap-mobile); /* было var(--timer-digit-gap-mobile) */
         /* width: var(--timer-grid-width-mobile); УДАЛЕНО */
         justify-content: center; /* или space-around */
     }
@@ -1106,6 +1123,11 @@ body {
     
     /* Максимально уменьшаем размер ячеек */
     
+    .timer-digit {
+        width: var(--digit-width-mobile);
+        height: var(--digit-height-mobile);
+    }
+    
     .timer-digit span {
         font-size: var(--digit-font-size-mobile);
     }
@@ -1121,42 +1143,6 @@ body {
     
     .timer-unit {
         gap: var(--timer-digit-gap-mobile);
-    }
-}
-
-@media (max-width: 480px) {
-    /* --- Адаптация Доп. Инфо --- */
-    .more-info-section {
-        gap: 0.5rem; /* Стандартный отступ */
-        margin-top: 1rem;
-    }
-    .section-title {
-        font-size: 1.2rem;
-    }
-    .app-download-block, .benefits-block, .social-share-block {
-        padding: 1rem;
-    }
-    .qr-codes-container {
-        justify-content: center; /* Центрируем QR-коды */
-        gap: 1rem;
-    }
-    .qr-code-img {
-        width: 90px;
-        height: 90px;
-        /* Розовая рамка наследуется */
-    }
-    .benefit-text {
-        font-size: 0.95rem; /* Немного увеличиваем шрифт */
-    }
-    /* Увеличиваем кнопки соцсетей */
-    .social-button {
-        width: 44px; /* Было 40px */
-        height: 44px; /* Было 40px */
-        /* Розовая рамка наследуется */
-    }
-    .social-icon {
-        width: 22px; /* Было 20px */
-        height: 22px; /* Было 20px */
     }
 }
 
@@ -1871,9 +1857,9 @@ body {
 }
 
 .product-list {
-    list-style: none;
+    margin-bottom: 0;
     padding: 0;
-    margin: 0;
+    list-style: none;
 }
 
 .product-item {
@@ -1936,6 +1922,9 @@ body {
         padding: 1rem;
         margin-left: 0;
         width: 100%;
+        align-items: center; /* Центрируем текст */
+        text-align: center; /* Центрируем текст */
+        border-top: 2px dashed #1a692f; /* Добавляем рамку сверху */
     }
 
     .product-list {
@@ -2386,7 +2375,10 @@ body {
 }
 
 @media (max-width: 600px) {
-    /* .gift-offer-block без изменений */
+    .gift-offer-block {
+        /* Убираем внешний padding у родителя */
+        padding: 0;
+    }
 
     .gift-content {
         /* Копируем из @media .product-content */
