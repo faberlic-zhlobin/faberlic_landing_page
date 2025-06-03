@@ -3,14 +3,14 @@ class CountdownTimer {
     constructor(endDateString) {
         this.endDate = new Date(endDateString);
         
-        this.daysTens = document.getElementById('days-tens').querySelector('span');
-        this.daysOnes = document.getElementById('days-ones').querySelector('span');
-        this.hoursTens = document.getElementById('hours-tens').querySelector('span');
-        this.hoursOnes = document.getElementById('hours-ones').querySelector('span');
-        this.minutesTens = document.getElementById('minutes-tens').querySelector('span');
-        this.minutesOnes = document.getElementById('minutes-ones').querySelector('span');
-        this.secondsTens = document.getElementById('seconds-tens').querySelector('span');
-        this.secondsOnes = document.getElementById('seconds-ones').querySelector('span');
+        this.daysTens = document.getElementById('timer-days-tens').querySelector('span');
+        this.daysOnes = document.getElementById('timer-days-ones').querySelector('span');
+        this.hoursTens = document.getElementById('timer-hours-tens').querySelector('span');
+        this.hoursOnes = document.getElementById('timer-hours-ones').querySelector('span');
+        this.minutesTens = document.getElementById('timer-minutes-tens').querySelector('span');
+        this.minutesOnes = document.getElementById('timer-minutes-ones').querySelector('span');
+        this.secondsTens = document.getElementById('timer-seconds-tens').querySelector('span');
+        this.secondsOnes = document.getElementById('timer-seconds-ones').querySelector('span');
         
         this.checkAndFixTimerStructure();
         
@@ -285,7 +285,7 @@ document.head.appendChild(style);
 
 document.addEventListener('DOMContentLoaded', () => {
     const currentYear = new Date().getFullYear();
-    const endDateString = `${currentYear}-06-01T23:59:59`; 
+    const endDateString = `${currentYear}-06-22T23:59:59`; 
     
     const timer = new CountdownTimer(endDateString);
     
