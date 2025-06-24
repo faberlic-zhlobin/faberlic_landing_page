@@ -1802,7 +1802,6 @@ body {
     font-weight: var(--timer-header-font-weight);
     margin-bottom: var(--timer-header-margin-bottom);
     text-align: center;
-    width: 100%;
 }
 
 .product-content {
@@ -1820,7 +1819,7 @@ body {
     max-width: 55%;
     padding: 0;
     margin: 0;
-    background-color: var(--product-image-bg-color);
+    background-color: #E96302;
     display: flex; /* Используем flex для центрирования */
     align-items: center; /* Центрируем изображение по вертикали */
     justify-content: center; /* Центрируем изображение по горизонтали */
@@ -1863,8 +1862,8 @@ body {
 }
 
 .product-item {
-    position: relative;
-    padding-left: 1.25rem;
+    position: relative
+    padding-left:  1.25rem;
     margin-bottom: 0.8rem;
     color: var(--card-main-text);
     font-size: 1rem;
@@ -1990,8 +1989,6 @@ body {
     padding: 1.5rem;
     margin-top: 0;
     margin-bottom: 1.5rem; /* Увеличиваем отступ снизу */
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .whatsapp-text {
@@ -2275,7 +2272,7 @@ body {
     max-width: 55%;
     padding: 0;
     margin: 0;
-    background-color: var(--product-image-bg-color);
+    background-color: #9EBCD8;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2294,7 +2291,7 @@ body {
     display: block;
     object-fit: contain;
     border-radius: calc(var(--card-border-radius) - 2px) 0 0 calc(var(--card-border-radius) - 2px); 
-    max-height: 100%;
+    max-height: 100%; /* Ограничиваем максимальную высоту */
 }
 
 .gift-details {
@@ -2331,7 +2328,24 @@ body {
     font-weight: var(--font-weight-semibold);
     color: var(--card-main-text);
     line-height: 1.4;
+    margin-bottom: 0.5rem; /* Отступ перед списком подарков */
+}
+
+.gift-item-list {
     margin-bottom: 1.5rem; /* Отступ перед кнопкой */
+}
+
+.gift-item {
+    font-family: var(--font-primary);
+    font-size: 0.9rem;
+    font-weight: var(--font-weight-normal);
+    color: var(--card-main-text);
+    line-height: 1.4;
+    margin-bottom: 0.25rem;
+}
+
+.gift-item:last-child {
+    margin-bottom: 0;
 }
 
 .gift-button {
@@ -2366,6 +2380,10 @@ body {
     .gift-description,
     .gift-name {
         font-size: 1rem;
+    }
+
+    .gift-item {
+        font-size: 0.85rem;
     }
 
     .gift-button {
@@ -2426,7 +2444,11 @@ body {
 
     /* Стили текста можно оставить или адаптировать */
     .gift-name {
-        margin-bottom: 1.5rem; /* Отступ перед кнопкой */
+        margin-bottom: 0.5rem; /* Отступ перед списком */
+    }
+
+    .gift-item-list {
+        margin-bottom: 1.5rem;
     }
 
     .gift-button {
@@ -2453,6 +2475,10 @@ body {
         font-size: 0.9rem; 
     }
 
+    .gift-item {
+        font-size: 0.8rem;
+    }
+
     .gift-button {
         width: 90%; 
         max-width: 250px; 
@@ -2466,6 +2492,8 @@ body {
 /* Добавляем стили для нового блока "Хотите подарок?" */
 .gift-promo-bar {
     margin-top: 1.5rem; /* Увеличиваем отступ сверху */
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     /* Наследует градиент и другие стили от .promo-bar */
     /* Можно добавить/переопределить стили, если нужно */
 }
@@ -2487,7 +2515,7 @@ body {
 /* ======= СТИЛИ ДЛЯ БЛОКА С ПОЯСНЕНИЯМИ ======= */
 .explanation-block {
     background-color: var(--card-bg-color); /* Используем тот же фон */
-    border: var(--card-border-width) solid var(--card-border-color); /* Та же рамка */
+    border: var(--card-border-width) solid var(--card-border-color); /* Розовая рамка */
     border-radius: var(--card-border-radius); /* То же скругление */
     padding: 1.5rem; /* Стандартный отступ */
     margin: 0 auto 0.5rem; /* Стандартный нижний отступ */
@@ -2516,7 +2544,8 @@ body {
     content: "•"; /* Кастомный маркер-точка */
     position: absolute;
     left: 0.25rem;
-    color: var(--card-border-color); /* Цвет маркера как у рамки */
+    top: 0.1em; /* Позиционируем маркер */
+    color: var(--card-border-color); /* Розовый маркер */
     font-weight: bold;
     font-size: 1.1em; /* Чуть крупнее текста */
 }
@@ -2689,18 +2718,8 @@ body {
     top: 0.1em; /* Позиционируем маркер */
     color: var(--card-border-color); /* Розовый маркер */
     font-weight: bold;
-    font-size: 1.1em; 
+    font-size: 1.1em; /* Чуть крупнее текста */
 }
-
-/* Удаляем стили для иконки */
-/* 
-.benefit-icon {
-    width: 24px; 
-    height: 24px;
-    flex-shrink: 0; 
-     filter: invert(39%) sepia(63%) saturate(4767%) hue-rotate(295deg) brightness(100%) contrast(101%); 
-}
-*/
 
 .benefit-text {
     font-family: var(--font-primary);
@@ -2832,4 +2851,4 @@ body {
     }
 }
 
-/* --- Конец стилей для ДОП. ИНФО --- */
+/* --- Конец стилей для ДОП. ИНФОРМАЦИЯ --- */
