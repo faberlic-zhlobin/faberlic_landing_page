@@ -2024,6 +2024,9 @@ body {
     /* Убираем розовую обводку */
     /* border: var(--card-border-width) solid var(--card-border-color); */
     /* box-sizing: border-box; */ /* Уже не нужно */
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
 }
 
 .whatsapp-button::before {
