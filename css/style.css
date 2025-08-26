@@ -1871,7 +1871,7 @@ body {
 }
 
 .product-item::before {
-    content: "•";
+    content: "";
     position: absolute;
     left: 0.25rem;
     color: var(--card-border-color);
