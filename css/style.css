@@ -2544,7 +2544,7 @@ body {
 }
 
 .explanation-item::before {
-    content: "•"; /* Кастомный маркер-точка */
+    content: ""; /* Кастомный маркер-точка */
     position: absolute;
     left: 0.25rem;
     top: 0.1em; /* Позиционируем маркер */
@@ -2715,7 +2715,7 @@ body {
 
 /* Добавляем маркер вместо иконки */
 .benefit-item::before {
-    content: "•";
+    content: "";
     position: absolute;
     left: 0.25rem;
     top: 0.1em; /* Позиционируем маркер */
