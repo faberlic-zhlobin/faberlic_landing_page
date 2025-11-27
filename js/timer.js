@@ -285,7 +285,7 @@ document.head.appendChild(style);
 
 document.addEventListener('DOMContentLoaded', () => {
     const currentYear = new Date().getFullYear();
-    const endDateString = `${currentYear}-10-19T23:59:59`; 
+    const endDateString = `${currentYear}-12-14T23:59:59`; 
     
     const timer = new CountdownTimer(endDateString);
     
